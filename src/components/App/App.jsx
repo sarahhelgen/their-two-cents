@@ -20,6 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import AddPage from '../AddPage/AddPage';
+import FavoritePage from '../FavoritePage/FavoritePage';
 
 import './App.css';
 
@@ -74,6 +75,15 @@ function App() {
           path="/add"
           >
             <AddPage />
+            </ProtectedRoute>
+
+          <ProtectedRoute
+          //this is the route for the favorite page
+          exact
+          path="/favorite"
+          >
+          
+            <FavoritePage />
             </ProtectedRoute>
 
           <Route

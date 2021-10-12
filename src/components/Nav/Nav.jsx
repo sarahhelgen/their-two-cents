@@ -35,6 +35,10 @@ function Nav() {
             <Link className="navLink" to="/add">
             Add a Recommendation
             </Link>
+            
+           <Link className="navLink" to="/favorite">
+           Favorites Page
+           </Link>
 
             <LogOutButton className="navLink" />
           </>
