@@ -44,6 +44,10 @@ function Nav() {
            Media
            </Link>
 
+           <Link classname="navLink" to="/business">
+             Business
+           </Link>
+
             <LogOutButton className="navLink" />
           </>
         )}

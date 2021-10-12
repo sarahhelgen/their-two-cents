@@ -22,6 +22,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import AddPage from '../AddPage/AddPage';
 import FavoritePage from '../FavoritePage/FavoritePage';
 import MediaPage from '../MediaPage/MediaPage';
+import BusinessPage from '../BusinessPage/BusinessPage';
 
 import './App.css';
 
@@ -94,6 +95,13 @@ function App() {
             >
               <MediaPage />
               </ProtectedRoute>
+
+          <ProtectedRoute
+          exact
+          path="/business"
+          >
+            <BusinessPage />
+            </ProtectedRoute>
 
           <Route
             exact
