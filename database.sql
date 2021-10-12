@@ -26,8 +26,3 @@ CREATE TABLE "recommendation" (
 
 );
 
-CREATE TABLE "category_recommendation" (
-    "id" SERIAL PRIMARY KEY,
-    "category_id" INT REFERENCES "category" NOT NULL,
-    "recommendation_id" INT REFERENCES "recommendation" NOT NULL
-);

@@ -21,6 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import AddPage from '../AddPage/AddPage';
 import FavoritePage from '../FavoritePage/FavoritePage';
+import MediaPage from '../MediaPage/MediaPage';
 
 import './App.css';
 
@@ -85,6 +86,14 @@ function App() {
           
             <FavoritePage />
             </ProtectedRoute>
+
+            <ProtectedRoute
+            //this is the route for the media page
+            exact
+            path="/media"
+            >
+              <MediaPage />
+              </ProtectedRoute>
 
           <Route
             exact

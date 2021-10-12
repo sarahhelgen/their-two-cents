@@ -40,6 +40,10 @@ function Nav() {
            Favorites Page
            </Link>
 
+           <Link className="navLink" to="/media">
+           Media
+           </Link>
+
             <LogOutButton className="navLink" />
           </>
         )}

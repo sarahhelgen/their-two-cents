@@ -3,12 +3,9 @@
 - create dummy data for db for testing
 - react router dom routes (/home, /add, /media, /product, /business, /other, /favorite)
 - create a login and make sure auth is working [x]
-- add server side routes to server.js
-    - recommendation.router.js
-    - category.router.js
-    - server side routes:
-        - /api/recommendation
-        - /api/category
+- add server side routes to server.js [x]
+    - /api/recommendation (recommendation.router.js) [x]
+    - /api/category (category.router.js) [x]
 - home page:
     - present data in table
     - useSelector for GET
@@ -16,5 +13,7 @@
     - add a new recommendation button - will need to push to /add
     - Table will need a details button for every category that will push to corresponding client side route
 
-
-- hamburger menu
+- favorite page:
+    - present data in table
+    - button for delete (DELETE route and saga)
+    - 
