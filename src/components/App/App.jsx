@@ -24,6 +24,7 @@ import FavoritePage from '../FavoritePage/FavoritePage';
 import MediaPage from '../MediaPage/MediaPage';
 import BusinessPage from '../BusinessPage/BusinessPage';
 import ProductPage from '../ProductPage/ProductPage';
+import OtherPage from '../OtherPage/OtherPage';
 
 import './App.css';
 
@@ -73,43 +74,53 @@ function App() {
             <InfoPage />
           </ProtectedRoute>
           <ProtectedRoute
-          //this is the route for the add a recommendation page
-          exact
-          path="/add"
+            //this is the route for the add a recommendation page
+            exact
+            path="/add"
           >
             <AddPage />
-            </ProtectedRoute>
+          </ProtectedRoute>
 
           <ProtectedRoute
-          //this is the route for the favorite page
-          exact
-          path="/favorite"
+            //this is the route for the favorite page
+            exact
+            path="/favorite"
           >
-          
-            <FavoritePage />
-            </ProtectedRoute>
 
-            <ProtectedRoute
+            <FavoritePage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
             //this is the route for the media page
             exact
             path="/media"
-            >
-              <MediaPage />
-              </ProtectedRoute>
+          >
+            <MediaPage />
+          </ProtectedRoute>
 
           <ProtectedRoute
-          exact
-          path="/business"
+          //this is the route for the business page
+            exact
+            path="/business"
           >
             <BusinessPage />
-            </ProtectedRoute>
+          </ProtectedRoute>
 
-            <ProtectedRoute
+          <ProtectedRoute
+            //this is the route for the product page
             exact
             path="/product"
-            >
-              <ProductPage />
-              </ProtectedRoute>
+          >
+            <ProductPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+          //this is the route for the other page
+            exact
+            path="/other"
+          >
+            <OtherPage />
+          </ProtectedRoute>
 
           <Route
             exact

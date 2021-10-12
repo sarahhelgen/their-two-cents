@@ -33,24 +33,28 @@ function Nav() {
             </Link>
 
             <Link className="navLink" to="/add">
-            Add a Recommendation
+              Add a Recommendation
             </Link>
-            
-           <Link className="navLink" to="/favorite">
-           Favorites Page
-           </Link>
 
-           <Link className="navLink" to="/media">
-           Media
-           </Link>
+            <Link className="navLink" to="/favorite">
+              Favorites Page
+            </Link>
 
-           <Link className="navLink" to="/business">
-             Business
-           </Link>
+            <Link className="navLink" to="/media">
+              Media
+            </Link>
 
-           <Link className="navLink" to="/product">
-            Product
-           </Link>
+            <Link className="navLink" to="/business">
+              Business
+            </Link>
+
+            <Link className="navLink" to="/product">
+              Product
+            </Link>
+
+            <Link className="navLink" to="/other">
+              Other
+            </Link>
 
             <LogOutButton className="navLink" />
           </>
