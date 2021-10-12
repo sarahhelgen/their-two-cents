@@ -19,6 +19,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import AddPage from '../AddPage/AddPage';
 
 import './App.css';
 
@@ -67,6 +68,13 @@ function App() {
           >
             <InfoPage />
           </ProtectedRoute>
+          <ProtectedRoute
+          //this is the route for the add a recommendation page
+          exact
+          path="/add"
+          >
+            <AddPage />
+            </ProtectedRoute>
 
           <Route
             exact
