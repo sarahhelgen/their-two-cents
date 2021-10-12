@@ -15,8 +15,6 @@ CREATE TABLE "user" (
 CREATE TABLE "category" (
 	"id" SERIAL PRIMARY KEY,
 	"category_name" VARCHAR (1000) NOT NULL,
-	"user_id" INT REFERENCES "user" NOT NULL
-
 );
 
 CREATE TABLE "recommendation" (
@@ -25,6 +23,11 @@ CREATE TABLE "recommendation" (
     "type" VARCHAR (1000) NOT NULL,
     "notes" VARCHAR (1500) NOT NULL,
     "favorite" BOOLEAN NOT NULL DEFAULT FALSE,
-    "user_id" INT REFERENCES "user" NOT NULL
 
+);
+
+CREATE TABLE "category_recommendation" (
+    "id" SERIAL PRIMARY KEY,
+    "category_id" INT REFERENCES "category" NOT NULL,
+    "recommendation_id" INT REFERENCES "recommendation" NOT NULL
 );
