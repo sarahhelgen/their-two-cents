@@ -27,3 +27,18 @@ CREATE TABLE "recommendation" (
     "category_id" INT REFERENCES "category"
 );
 
+INSERT INTO "category" ("category_name")
+VALUES ('Media'), ('Business'), ('Product'), ('Other');
+
+INSERT INTO "recommendation" ("name", "type", "notes", "user_id", "category_id")
+VALUES ('Fleabag', 'Television', 'Hannah says best show ever!', '1', '1');
+
+INSERT INTO "recommendation" ("name", "type", "notes", "user_id", "category_id")
+VALUES ('Dripping Root', 'Restaurant', 'Black owned business!', '1', '2'),
+('Getting On', 'Television', 'dark comedy about geriatric wing at hospital', '1', '1'),
+('Maintenance Phase', 'Podcast', 'debunks diet and wellness industry', '1', '1'),
+('Seaside Hotel', 'Television', ' mom recommended - has subtitles so not for before bed', '1', '1'),
+('Old Navy Powersoft Leggings', 'Clothing', 'Lululemon knock-off', '1', '3'),
+('The Phillips Collection', 'Museum', 'go the next time youre in DC!', '1', '4');
+
+
