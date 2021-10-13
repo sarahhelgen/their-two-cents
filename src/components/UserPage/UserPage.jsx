@@ -1,5 +1,4 @@
 import React from 'react';
-import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch } from 'react-redux';
 import {useEffect} from 'react';
 
@@ -20,11 +19,7 @@ function UserPage() {
 
 
       <section>
-        {recommendations.map((recommendation) => {
-            return(
-              <div> {recommendation.name} </div>
-            )
-        })}
+       {JSON.stringify({recommendations})}
       </section>
     </div>
   

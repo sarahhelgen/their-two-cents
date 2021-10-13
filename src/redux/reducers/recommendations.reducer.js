@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 
-const recommendations =(state = [], action ) => {
-    switch(action.type) {
+const recommendations = (state = [], action) => {
+    switch (action.type) {
         case 'SET_RECOMMENDATIONS':
             return action.payload;
-        default: 
+        default:
             return state;
     }
 }
@@ -14,5 +14,5 @@ const recommendations =(state = [], action ) => {
 
 
 export default combineReducers({
-   recommendations,
-  });
+    recommendations,
+});

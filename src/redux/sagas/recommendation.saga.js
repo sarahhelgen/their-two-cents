@@ -16,7 +16,7 @@ function* fetchAllRecommendations(){
     try {
         const recommendations = yield axios.get('/api/recommendation');
         console.log('getting all the recommendations', recommendations.data);
-        yield put({ type: 'SET_RECOMMENDATIONS', payload: recommendations.data })
+        yield put({ type: 'SET_RECOMMENDATIONS', payload: recommendations.data });
     } catch (error) {
         console.log('error fetching recommendations from db', error );
     }

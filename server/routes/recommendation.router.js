@@ -4,7 +4,7 @@ const router = express.Router();
 
 //GET route to retrieve all recommendation data from db and display on home page
 router.get('/', (req, res) => {
-  const queryText = `SELECT * FROM "recommendation" ORDER BY "name`;
+  const queryText = `SELECT * FROM "recommendation" ORDER BY "name"`;
   pool.query(queryText)
     .then(result => {
       console.log('the result is', result );
