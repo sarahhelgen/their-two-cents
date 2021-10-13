@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
   const queryText = `SELECT * FROM "recommendation" ORDER BY "name`;
   pool.query(queryText)
     .then(result => {
+      console.log('the result is', result );
       res.send(result.rows);
     }).catch(error => {
       console.log('Error getting recommendations from DB!', error);

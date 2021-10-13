@@ -7,6 +7,7 @@ function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
+  const recommendations = useSelector((store) => store.recommendations);
 
   useEffect(() => {
     dispatch({ type: 'FETCH_RECOMMENDATIONS' });
@@ -16,9 +17,15 @@ function UserPage() {
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
       <p>Your ID is: {user.id}</p>
-      <LogOutButton className="btn" />
 
-      <h2>Recommendation Data Goes Here:</h2>
+
+      <section>
+        {recommendations.map((recommendation) => {
+            return(
+              <div> {recommendation.name} </div>
+            )
+        })}
+      </section>
     </div>
   
 
