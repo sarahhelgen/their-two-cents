@@ -13,16 +13,17 @@ CREATE TABLE "user" (
 );
 
 CREATE TABLE "category" (
-	"id" SERIAL PRIMARY KEY,
-	"category_name" VARCHAR (1000) NOT NULL,
+    "id" SERIAL PRIMARY KEY,
+    "category_name" VARCHAR (250) NOT NULL
 );
 
 CREATE TABLE "recommendation" (
     "id" SERIAL PRIMARY KEY,
-    "name" VARCHAR (1000) NOT NULL,
-    "type" VARCHAR (1000) NOT NULL,
-    "notes" VARCHAR (1500) NOT NULL,
-    "favorite" BOOLEAN NOT NULL DEFAULT FALSE,
-
+    "name" VARCHAR (250) NOT NULL,
+    "type" VARCHAR (250) NOT NULL,
+    "notes" VARCHAR (1000) NOT NULL,
+    "favorite" BOOLEAN DEFAULT FALSE,
+    "user_id" INT REFERENCES "user",
+    "category_id" INT REFERENCES "category"
 );
 
