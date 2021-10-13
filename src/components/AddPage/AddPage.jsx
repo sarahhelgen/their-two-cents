@@ -11,7 +11,7 @@ function AddPage() {
     const [notes, setNotes ] = useState('');
     const [category, setCategory] = useState('');
 
-    //creating a function that takes in a newRecommendation, makes it an object, and posts to server
+    //creating a function that on click of submit button takes in a newRecommendation, makes it an object, and posts to server
     const addNewRecommendation = (event) => {
         console.log('adding new rec');
         event.preventDefault();
@@ -29,17 +29,17 @@ function AddPage() {
 
     return (
 
-        <form>
-            <input type="text" placeholder="Name"></input>
-            <input type="text" placeholder="Type"></input>
-            <input type="text" placeholder="Notes"></input>
-            <select>
-            <option>Media</option>
-            <option>Business</option>
-            <option>Product </option>
-            <option>Other</option>
+        <form onSubmit={addNewRecommendation}>
+            <input type="text" placeholder="Name" value={name} onChange={(event) => setName(event.target.value )}></input>
+            <input type="text" placeholder="Type" value={type} onChange={(event) => setType(event.target.value)}></input>
+            <input type="text" placeholder="Notes" value={notes} onChange={(event) => setNotes(event.target.value )}></input>
+            <select onChange={(event) => setCategory(event.target.value)}>
+            <option value={1}>Media</option>
+            <option value={2}>Business</option>
+            <option value={3}>Product </option>
+            <option value={4}>Other</option>
             </select>
-            <button>Submit</button>
+            <button type="submit">Submit</button>
         </form>
     )
 
