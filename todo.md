@@ -1,6 +1,6 @@
 - npm installs [x]
 - create database inserts [x]
-- create dummy data for db for testing
+- create dummy data for db for testing [x]
 - react router dom routes (/home, /add, /media, /product, /business, /other, /favorite)
 - create a login and make sure auth is working [x]
 - add server side routes to server.js [x]

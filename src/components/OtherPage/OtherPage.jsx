@@ -9,3 +9,5 @@ function OtherPage () {
         </>
     )
 }
+
+export default OtherPage;
