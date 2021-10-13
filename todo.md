@@ -9,7 +9,7 @@
 - home page:
     - present data in table
     - useSelector for GET
-    - write saga for GET
+    - write saga for GET [x]
     - add a new recommendation button - will need to push to /add
     - Table will need a details button for every category that will push to corresponding client side route
 
