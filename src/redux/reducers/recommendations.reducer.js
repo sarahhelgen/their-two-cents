@@ -4,6 +4,8 @@ const recommendations = (state = [], action) => {
     switch (action.type) {
         case 'SET_RECOMMENDATIONS':
             return action.payload;
+        case 'ADD_RECOMMENDATION':
+            return [...state, action.payload]
         default:
             return state;
     }
