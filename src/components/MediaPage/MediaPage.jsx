@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 
 function MediaPage() {
     const dispatch = useDispatch();
-    const media = useSelector(store => store.media );
+    const media = useSelector(store => store.recommendations.media);
     
-
+    console.log("in media page",media)
     useEffect(() => {
         dispatch({ type: 'FETCH_MEDIA'});
     }, []);
@@ -13,7 +13,9 @@ function MediaPage() {
     return (
 
         <>
+      
         {JSON.stringify({media})}
+        
         </>
     )
 

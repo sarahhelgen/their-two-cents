@@ -41,7 +41,7 @@ function* fetchMedia() {
         console.log('fetchMedia saga connected');
         const media = yield axios.get('/api/media');
         console.log('getting media recommendations from db', media.data );
-        yield ({ type: 'SET_MEDIA', payload: media.data });
+        yield put({ type: 'SET_MEDIA', payload: media.data });
     } catch (error) {
         console.error('error fetching media recommendations from db');
     }
