@@ -8,6 +8,7 @@ import axios from 'axios';
 function* RecommendationSaga() {
     yield takeEvery('FETCH_RECOMMENDATIONS', fetchAllRecommendations);
     yield takeEvery('POST_REC_TO_SERVER', sendRecToServer);
+    yield takeEvery('FETCH_MEDIA', fetchMedia );
 
 }
 
@@ -32,6 +33,17 @@ function* sendRecToServer(action) {
         yield put({ type: 'ADD_RECOMMENDATION', payload: action.payload })
     } catch (error) {
         console.error('error with saga posting rec to db', error);
+    }
+}
+
+function* fetchMedia() {
+    try {
+        console.log('fetchMedia saga connected');
+        const media = yield axios.get('/api/recommendation');
+        console.log('getting media recommendations from db', media.data );
+        yield ({ type: 'SET_MEDIA', payload: media.data });
+    } catch (error) {
+        console.error('error fetching media recommendations from db');
     }
 }
 
