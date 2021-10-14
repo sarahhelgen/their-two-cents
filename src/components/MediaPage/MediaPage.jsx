@@ -1,24 +1,27 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
-function MediaPage() {
+function MediaPage () {
+
     const dispatch = useDispatch();
-    const media = useSelector(store => store.recommendations.media);
-    
-    console.log("in media page",media)
-    useEffect(() => {
-        dispatch({ type: 'FETCH_MEDIA'});
+    const media = useSelector(store => store.recommendations.media );
+
+    useEffect(()=> {
+        dispatch({type: 'FETCH_MEDIA'});
     }, []);
 
-    return (
+    return(
 
         <>
+        {media.map((media) =>
+         <div key={media.id}>{media.name}
+         {media.type}
+         {media.notes}
+          </div>
       
-        {JSON.stringify({media})}
-        
+      )}
         </>
     )
-
-    }
+}
 
 export default MediaPage;
