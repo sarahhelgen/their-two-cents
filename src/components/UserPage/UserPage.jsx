@@ -12,14 +12,13 @@ function UserPage() {
     dispatch({ type: 'FETCH_RECOMMENDATIONS' });
   }, []);
 
-  console.log('the recommendations are', recommendations);
+  console.log('The recommendations are', recommendations );
+
 
   return (
   
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
-
-
     
       {/* {JSON.stringify({ recommendations })}  */}
        {recommendations.map((recommendation) =>

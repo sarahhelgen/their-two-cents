@@ -19,22 +19,12 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   const newRecommendation = req.body;
   console.log('The new rec is', newRecommendation);
-  const insertRecQuery = `INSERT INTO "recommendation" ("name", "type", "notes") VALUES ($1, $2, $3) RETURNING "id";`;
-  pool.query(insertRecQuery, [newRecommendation.name, newRecommendation.type, newRecommendation.notes])
+  const insertRecQuery = `INSERT INTO "recommendation" ("name", "type", "notes", "category_id") VALUES ($1, $2, $3, $4 ) RETURNING "id";`;
+  pool.query(insertRecQuery, [newRecommendation.name, newRecommendation.type, newRecommendation.notes, newRecommendation.category ])
     .then(result => {
-      console.log('New Recommendation id is', result.rows[0].id);
-      const createdRecId = result.rows[0].id;
-      const insertCategoryQuery = `INSERT INTO "recommendation" ("id", "category_id") VALUES ($1, $2);`;
-      pool.query(insertCategoryQuery, [createdRecId, Number(req.body.category) ])
-        .then(result => {
-          res.sendStatus(201);
-        }).catch(error => {
-          console.log('Error with sending recommendation to db', error);
-          res.sendStatus(500);
-        })
-
+      res.sendStatus(201);
     }).catch(error => {
-      console.log('error with first post to db', error);
+      console.log('error with post to db', error);
       res.sendStatus(500);
     })
 
