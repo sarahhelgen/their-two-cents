@@ -6,6 +6,13 @@ const recommendations = (state = [], action) => {
             return action.payload;
         case 'ADD_RECOMMENDATION':
             return [...state, action.payload];
+        default:
+            return state;
+    }
+}
+
+const media = (state = [], action ) => {
+    switch (action.type) {
         case 'SET_MEDIA':
             return action.payload;
         default:
@@ -19,4 +26,5 @@ const recommendations = (state = [], action) => {
 
 export default combineReducers({
     recommendations,
+    media,
 });

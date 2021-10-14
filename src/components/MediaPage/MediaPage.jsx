@@ -3,23 +3,20 @@ import { useEffect } from 'react';
 
 function MediaPage() {
     const dispatch = useDispatch();
+    const media = useSelector(store => store.media );
+    
 
     useEffect(() => {
         dispatch({ type: 'FETCH_MEDIA'});
     }, []);
 
-
-    
-
-
-    
-
     return (
 
         <>
-            <h6>Media table of recommendations will go here</h6>
+        {JSON.stringify({media})}
         </>
     )
-}
+
+    }
 
 export default MediaPage;

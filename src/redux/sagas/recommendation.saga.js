@@ -39,7 +39,7 @@ function* sendRecToServer(action) {
 function* fetchMedia() {
     try {
         console.log('fetchMedia saga connected');
-        const media = yield axios.get('/api/recommendation');
+        const media = yield axios.get('/api/media');
         console.log('getting media recommendations from db', media.data );
         yield ({ type: 'SET_MEDIA', payload: media.data });
     } catch (error) {
