@@ -5,7 +5,9 @@ const recommendations = (state = [], action) => {
         case 'SET_RECOMMENDATIONS':
             return action.payload;
         case 'ADD_RECOMMENDATION':
-            return [...state, action.payload]
+            return [...state, action.payload];
+        case 'SET_MEDIA':
+            return action.payload;
         default:
             return state;
     }
