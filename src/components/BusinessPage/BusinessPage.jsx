@@ -11,15 +11,23 @@ function BusinessPage () {
         dispatch({ type: 'FETCH_BUSINESS' });
     }, []);
 
+    const favoriteBusiness = ( businessId ) => {
+        dispatch({ type: 'FAVORITE_BUSINESS', payload: businessId})
+    }
+
+    const deleteBusiness = (businessId) => {
+        dispatch({type: 'DELETE_BUSINESS', payload: businessId })
+    }
+
     return(
 
            
         <>
 
-        {JSON.stringify(business)}
+        {/* {JSON.stringify(business)} */}
 
         {business.map((business) =>
-            <table>
+            <table key={business.id}>
                 <thead>
                     <tr>
                         <th>Name</th>

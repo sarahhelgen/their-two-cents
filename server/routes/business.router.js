@@ -18,24 +18,24 @@ router.get('/', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     console.log('req.params is', req.params);
-    const mediaId = req.params.id;
+    const businessId = req.params.id;
     const queryText = `DELETE FROM "recommendation" WHERE id = $1`;
-    pool.query(queryText, [mediaId]).then((result) => {
+    pool.query(queryText, [businessId]).then((result) => {
         res.sendStatus(200);
     }).catch((error) => {
-        console.log('error with /media DELETE', error);
+        console.log('error with /business DELETE', error);
         res.sendStatus(500);
     })
 })
 
 router.put('/:id', (req, res) => {
     console.log('req.params is', req.params);
-    const mediaId = req.params.id;
+    const businessId = req.params.id;
     let queryText = `UPDATE "recommendation" SET "favorite" = 'true' WHERE id = $1;`;
-    pool.query(queryText, [mediaId]).then((result) => {
+    pool.query(queryText, [businessId]).then((result) => {
         res.sendStatus(200);
     }).catch((error) => {
-        console.log('error with media PUT', error);
+        console.log('error with business PUT', error);
         res.sendStatus(500);
     })
 })
