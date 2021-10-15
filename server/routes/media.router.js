@@ -29,4 +29,16 @@ router.delete('/:id', (req,res) => {
     })
 })
 
+router.put('/:id', (req,res) => {
+    console.log('req.params is', req.params );
+    const mediaId = req.params.id;
+    let queryText = `UPDATE "recommendation" SET "favorite" = 'true' WHERE id = $1;`;
+    pool.query(queryText, [mediaId]).then((result) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log( 'error with media PUT', error );
+        res.sendStatus(500);
+    })
+})
+
 module.exports = router;

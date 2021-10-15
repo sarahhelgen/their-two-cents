@@ -11,8 +11,13 @@ function MediaPage() {
     }, []);
 
     const deleteMedia = (mediaId) => {
-        console.log('in deleteFunction');
+        console.log('in deleteFunction', mediaId );
         dispatch({ type: 'DELETE_MEDIA', payload: mediaId})
+    }
+
+    const favoriteMedia = (mediaId) => {
+        console.log('in update media', mediaId );
+        dispatch({ type:'FAVORITE_MEDIA', payload: mediaId })
     }
 
     return (
@@ -34,7 +39,7 @@ function MediaPage() {
                             <td>{media.name}</td>
                             <td>{media.type}</td>
                             <td>{media.notes}</td>
-                            <td><button>Favorite!</button></td>
+                            <td><button onClick={(event) => favoriteMedia(media.id)}>Favorite!</button></td>
                             <td><button onClick={(event) => deleteMedia(media.id)}>Delete</button></td>
                         </tr>
                     </tbody>
