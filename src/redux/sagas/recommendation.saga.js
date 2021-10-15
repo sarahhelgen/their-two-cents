@@ -48,7 +48,7 @@ function* fetchMedia() {
     }
 }
 
-function* deleteMedia () {
+function* deleteMedia (action) {
     try{
         yield axios.delete(`/api/media/${action.payload}`);
         yield put({type: 'FETCH_MEDIA'});

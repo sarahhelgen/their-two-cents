@@ -10,7 +10,7 @@ function MediaPage() {
         dispatch({ type: 'FETCH_MEDIA' });
     }, []);
 
-    const deleteMedia = () => {
+    const deleteMedia = (mediaId) => {
         console.log('in deleteFunction');
         dispatch({ type: 'DELETE_MEDIA', payload: mediaId})
     }
