@@ -5,7 +5,6 @@ function MediaPage() {
 
     const dispatch = useDispatch();
     const media = useSelector(store => store.recommendations.media);
-    const recommendations = useSelector(store => store.recommendations )
 
     useEffect(() => {
         dispatch({ type: 'FETCH_MEDIA' });

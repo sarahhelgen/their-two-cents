@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 router.get('/', (req, res) => {
-    const queryText = `SELECT * FROM "recommendation"
+    const queryText = `SELECT "recommendation".*, "recommendation"."id" as "rec_id" FROM "recommendation"
     JOIN "category" ON "category"."id" = "recommendation"."category_id"
     WHERE "category"."id" = '2';`
     pool.query(queryText)
@@ -16,11 +16,28 @@ router.get('/', (req, res) => {
         })
 });
 
-/**
- * POST route template
- */
-router.post('/', (req, res) => {
-    // POST route code here
-});
+router.delete('/:id', (req, res) => {
+    console.log('req.params is', req.params);
+    const mediaId = req.params.id;
+    const queryText = `DELETE FROM "recommendation" WHERE id = $1`;
+    pool.query(queryText, [mediaId]).then((result) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('error with /media DELETE', error);
+        res.sendStatus(500);
+    })
+})
+
+router.put('/:id', (req, res) => {
+    console.log('req.params is', req.params);
+    const mediaId = req.params.id;
+    let queryText = `UPDATE "recommendation" SET "favorite" = 'true' WHERE id = $1;`;
+    pool.query(queryText, [mediaId]).then((result) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('error with media PUT', error);
+        res.sendStatus(500);
+    })
+})
 
 module.exports = router;

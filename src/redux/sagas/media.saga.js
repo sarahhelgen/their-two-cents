@@ -1,7 +1,7 @@
 import { takeEvery, put } from "@redux-saga/core/effects";
 import axios from 'axios';
 
-function* MediaSaga () {
+function* mediaSaga () {
     yield takeEvery('FETCH_MEDIA', fetchMedia );
     yield takeEvery('DELETE_MEDIA', deleteMedia );
     yield takeEvery('FAVORITE_MEDIA', favoriteMedia );
@@ -42,4 +42,4 @@ function* favoriteMedia (action) {
 
 
 
-export default MediaSaga;
+export default mediaSaga;
