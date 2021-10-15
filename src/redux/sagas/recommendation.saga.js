@@ -10,6 +10,7 @@ function* RecommendationSaga() {
     yield takeEvery('POST_REC_TO_SERVER', sendRecToServer);
     yield takeEvery('FETCH_MEDIA', fetchMedia );
     yield takeEvery('DELETE_MEDIA', deleteMedia );
+    yield takeEvery('FAVORITE_MEDIA', favoriteMedia );
 
 }
 
@@ -54,6 +55,16 @@ function* deleteMedia (action) {
         yield put({type: 'FETCH_MEDIA'});
     } catch (error) {
         console.error( 'error deleting media from db ', error )
+    }
+}
+
+function* favoriteMedia (action) {
+    try {
+        console.log('the mediaId is', action.payload );
+        yield axios.put(`/api/media/${action.payload}`);
+        yield put ({ type: 'FETCH_MEDIA'});
+    } catch (error) {
+        console.error( 'Error with media favorite', error );
     }
 }
 

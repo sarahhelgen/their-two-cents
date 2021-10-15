@@ -5,6 +5,7 @@ function MediaPage() {
 
     const dispatch = useDispatch();
     const media = useSelector(store => store.recommendations.media);
+    const recommendations = useSelector(store => store.recommendations )
 
     useEffect(() => {
         dispatch({ type: 'FETCH_MEDIA' });
@@ -39,8 +40,8 @@ function MediaPage() {
                             <td>{media.name}</td>
                             <td>{media.type}</td>
                             <td>{media.notes}</td>
-                            <td><button onClick={(event) => favoriteMedia(media.id)}>Favorite!</button></td>
-                            <td><button onClick={(event) => deleteMedia(media.id)}>Delete</button></td>
+                            <td><button onClick={(event) => favoriteMedia(media.rec_id)}>Favorite!</button></td>
+                            <td><button onClick={(event) => deleteMedia(media.rec_id)}>Delete</button></td>
                         </tr>
                     </tbody>
                 </table>

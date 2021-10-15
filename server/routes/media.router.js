@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 router.get('/', (req, res) => {
-    const queryText = `SELECT * FROM "recommendation"
+    const queryText = `SELECT "recommendation".*, "recommendation"."id" as "rec_id" FROM "recommendation"
     JOIN "category" ON "category"."id" = "recommendation"."category_id"
     WHERE "category"."id" = '1';`
     pool.query(queryText)
