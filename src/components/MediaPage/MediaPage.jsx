@@ -10,9 +10,9 @@ function MediaPage() {
         dispatch({ type: 'FETCH_MEDIA' });
     }, []);
 
-    const deleteRecommendation = () => {
+    const deleteMedia = () => {
         console.log('in deleteFunction');
-        dispatch({})
+        dispatch({ type: 'DELETE_MEDIA', payload: mediaId})
     }
 
     return (
@@ -35,7 +35,7 @@ function MediaPage() {
                             <td>{media.type}</td>
                             <td>{media.notes}</td>
                             <td><button>Favorite!</button></td>
-                            <td><button onClick={deleteRecommendation}>Delete</button></td>
+                            <td><button onClick={(event) => deleteMedia(media.id)}>Delete</button></td>
                         </tr>
                     </tbody>
                 </table>

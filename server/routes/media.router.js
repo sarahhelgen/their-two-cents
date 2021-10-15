@@ -16,12 +16,6 @@ router.get('/', (req, res) => {
         })
 });
 
-/**
- * POST route template
- */
-router.post('/', (req, res) => {
-    // POST route code here
-});
 
 router.delete('/:id', (req,res) => {
     console.log('req.params is', req.params );
@@ -30,7 +24,7 @@ router.delete('/:id', (req,res) => {
     pool.query(queryText, [mediaId] ).then((result) =>{
         res.sendStatus(200);
     }).catch((error) =>{
-        console.log( 'errror with /media DELETE', error );
+        console.log( 'error with /media DELETE', error );
         res.sendStatus(500);
     })
 })

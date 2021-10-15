@@ -9,6 +9,7 @@ function* RecommendationSaga() {
     yield takeEvery('FETCH_RECOMMENDATIONS', fetchAllRecommendations);
     yield takeEvery('POST_REC_TO_SERVER', sendRecToServer);
     yield takeEvery('FETCH_MEDIA', fetchMedia );
+    yield takeEvery('DELETE_MEDIA', deleteMedia );
 
 }
 
@@ -44,6 +45,15 @@ function* fetchMedia() {
         yield put({ type: 'SET_MEDIA', payload: media.data });
     } catch (error) {
         console.error('error fetching media recommendations from db');
+    }
+}
+
+function* deleteMedia () {
+    try{
+        yield axios.delete(`/api/media/${action.payload}`);
+        yield put({type: 'FETCH_MEDIA'});
+    } catch (error) {
+        console.error( 'error deleting media from db ', error )
     }
 }
 
