@@ -14,6 +14,7 @@ const mediaRouter = require('./routes/media.router');
 const businessRouter = require('./routes/business.router');
 const productRouter = require('./routes/product.router');
 const otherRouter = require('./routes/other.router')
+const favoriteRouter = require('./routes/favorite.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -33,6 +34,7 @@ app.use('/api/media', mediaRouter );
 app.use('/api/business', businessRouter );
 app.use('/api/product', productRouter );
 app.use('/api/other', otherRouter );
+app.use('/api/favorite', favoriteRouter );
 
 // Serve static files
 app.use(express.static('build'));
