@@ -44,9 +44,6 @@ function MediaPage() {
                         </tr>
                     </tbody>
                 </table>
-
-
-
             )}
 
 

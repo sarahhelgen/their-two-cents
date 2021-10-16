@@ -31,7 +31,7 @@ const business = (state = [], action ) => {
 
 const product = (state = [], action ) => {
     switch(action.type) {
-        case'SET_PRODUCT':
+        case'SET_PRODUCTS':
             return action.payload;
         default:
             return state;
