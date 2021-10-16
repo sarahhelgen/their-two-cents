@@ -13,6 +13,7 @@ const recommendationRouter = require('./routes/recommendation.router');
 const mediaRouter = require('./routes/media.router');
 const businessRouter = require('./routes/business.router');
 const productRouter = require('./routes/product.router');
+const otherRouter = require('./routes/other.router')
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -31,6 +32,7 @@ app.use('/api/recommendation', recommendationRouter );
 app.use('/api/media', mediaRouter );
 app.use('/api/business', businessRouter );
 app.use('/api/product', productRouter );
+app.use('/api/other', otherRouter );
 
 // Serve static files
 app.use(express.static('build'));
