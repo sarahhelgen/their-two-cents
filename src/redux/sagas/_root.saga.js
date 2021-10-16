@@ -5,6 +5,7 @@ import userSaga from './user.saga';
 import recommendationSaga from './recommendation.saga';
 import mediaSaga from './media.saga';
 import businessSaga from './business.saga';
+import productSaga from './product.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -21,5 +22,6 @@ export default function* rootSaga() {
     recommendationSaga(),
     mediaSaga(),
     businessSaga(),
+    productSaga(),
   ]);
 }

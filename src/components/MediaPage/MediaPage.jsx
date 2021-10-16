@@ -24,7 +24,7 @@ function MediaPage() {
 
         <>
             {media.map((media) =>
-                <table>
+                <table key={media.id}>
                     <thead>
                         <tr>
                             <th>Name</th>
