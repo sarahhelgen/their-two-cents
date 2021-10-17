@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 function FavoritePage() {
 
      const dispatch = useDispatch();
-     const favorites = useSelector( store => store.recommendations.recommendations.favorite );
+     const favorites = useSelector( store => store.recommendations.favorite );
 
      useEffect(() => {
         dispatch({ type: 'FETCH_FAVORITES' });
@@ -14,7 +14,7 @@ function FavoritePage() {
 
         <>
         {JSON.stringify(favorites)}
-         {/* {favorites.map((favorite) =>
+         {favorites.map((favorite) =>
                 <table key={favorite.id}>
                     <thead>
                         <tr>
@@ -33,7 +33,7 @@ function FavoritePage() {
                         </tr>
                     </tbody>
                 </table>
-            )} */}
+            )}
         </>
     )
 }

@@ -34,6 +34,7 @@ app.use('/api/media', mediaRouter );
 app.use('/api/business', businessRouter );
 app.use('/api/product', productRouter );
 app.use('/api/other', otherRouter );
+app.use('/api/favorite', favoriteRouter );
 
 
 // Serve static files
