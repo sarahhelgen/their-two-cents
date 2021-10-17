@@ -3,18 +3,24 @@ import { useEffect } from 'react';
 
 function FavoritePage() {
 
-     const dispatch = useDispatch();
-     const favorites = useSelector( store => store.recommendations.favorite );
+    const dispatch = useDispatch();
+    const favorites = useSelector(store => store.recommendations.favorite);
 
-     useEffect(() => {
+    useEffect(() => {
         dispatch({ type: 'FETCH_FAVORITES' });
     }, []);
 
-    return(
+    const deleteFavorite = (favoriteId) => {
+        console.log('in deleteFavorite');
+        dispatch({ type: 'DELETE_FAVORITE', payload: favoriteId })
+
+    }
+
+    return (
 
         <>
-        {JSON.stringify(favorites)}
-         {favorites.map((favorite) =>
+            {/* {JSON.stringify(favorites)} */}
+            {favorites.map((favorite) =>
                 <table key={favorite.id}>
                     <thead>
                         <tr>
