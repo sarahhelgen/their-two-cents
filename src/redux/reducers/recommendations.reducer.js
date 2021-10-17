@@ -15,6 +15,8 @@ const media = (state = [], action ) => {
     switch (action.type) {
         case 'SET_MEDIA':
             return action.payload;
+        case 'SET_MEDIA_COUNT':
+            return action.payload;
         default:
             return state;
     }
@@ -23,6 +25,8 @@ const media = (state = [], action ) => {
 const business = (state = [], action ) => {
     switch(action.type) {
         case 'SET_BUSINESS':
+            return action.payload;
+        case 'SET_BUSINESS_COUNT':
             return action.payload;
         default:
             return state;
@@ -33,6 +37,8 @@ const product = (state = [], action ) => {
     switch(action.type) {
         case'SET_PRODUCTS':
             return action.payload;
+        case 'SET_PRODUCT_COUNT':
+            return action.payload;
         default:
             return state;
     }
@@ -41,6 +47,8 @@ const product = (state = [], action ) => {
 const other = (state = [], action ) => {
     switch(action.type) {
         case 'SET_OTHER':
+            return action.payload;
+        case 'SET_OTHER_COUNT':
             return action.payload;
         default:
             return state;

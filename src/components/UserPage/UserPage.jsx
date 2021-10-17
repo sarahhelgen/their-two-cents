@@ -8,13 +8,19 @@ function UserPage() {
   const user = useSelector(store => store.user);
   const dispatch = useDispatch();
   const history = useHistory();
-  const recommendations = useSelector(store => store.recommendations.recommendations);
+  const mediaCount = useSelector(store => store.recommendations.media);
+  const productCount = useSelector( store => store.recommendations.product );
+  const businessCount = useSelector( store => store.recommendations.business );
+  const otherCount = useSelector( store => store.recommendations.other);
 
   useEffect(() => {
-    dispatch({ type: 'FETCH_RECOMMENDATIONS' });
+    dispatch({ type: 'FETCH_MEDIA_COUNT' });
+    dispatch({ type: 'FETCH_PRODUCT_COUNT'});
+    dispatch({ type: 'FETCH_BUSINESS_COUNT'});
+    dispatch({ type: 'FETCH_OTHER_COUNT'});
   }, []);
 
-  console.log('The recommendations are', recommendations);
+  
 
   const goToMedia = () =>{
     history.push('/media');
@@ -34,18 +40,12 @@ function UserPage() {
 
 
   return (
+    <div>
 
-    <div className="container">
-      <h2>Welcome, {user.username}!</h2>
-
-      {/* {JSON.stringify({ recommendations })}  */}
-      {recommendations.map((recommendation) =>
-        <div key={recommendation.id}>{recommendation.name}
-          {recommendation.type}
-          {recommendation.notes}
-        </div>
-
-      )}
+      {JSON.stringify(mediaCount)}
+      {JSON.stringify(productCount)}
+      {JSON.stringify(businessCount)}
+      {JSON.stringify(otherCount)}
 
       <table>
         <thead>
@@ -78,7 +78,8 @@ function UserPage() {
           </tr>
         </tbody>
       </table>
-    </div>
+      </div>
+    
 
 
   );
