@@ -16,6 +16,22 @@ function UserPage() {
 
   console.log('The recommendations are', recommendations);
 
+  const goToMedia = () =>{
+    history.push('/media');
+  }
+
+  const goToBusiness = () => {
+    history.push('/business');
+  }
+
+  const goToProducts = () => {
+    history.push('/product');
+  }
+
+  const goToOther = () => {
+    history.push('/other');
+  }
+
 
   return (
 
@@ -43,27 +59,25 @@ function UserPage() {
           <tr>
             <td>Media</td>
             <td>number of recs</td>
-            <td><button>Details</button></td>
+            <td><button onClick={goToMedia}>Details</button></td>
           </tr>
           <tr>
             <td>Products</td>
             <td>number of recs</td>
-            <td><button>Details</button></td>
+            <td><button onClick={goToProducts}>Details</button></td>
           </tr>
           <tr>
             <td>Businesses</td>
             <td>number of recs</td>
-            <td><button>Details</button></td>
+            <td><button onClick={goToBusiness}>Details</button></td>
           </tr>
           <tr>
             <td>Other</td>
             <td>number of recs</td>
-            <td><button>Details</button></td>
+            <td><button onClick ={goToOther}>Details</button></td>
           </tr>
         </tbody>
-
       </table>
-
     </div>
 
 
