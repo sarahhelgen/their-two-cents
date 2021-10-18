@@ -14,8 +14,6 @@ function* RecommendationSaga() {
 
 }
 
-
-
 //generator function that fetches the media count from the db
 function* fetchMediaCount() {
     try {

@@ -17,6 +17,7 @@ router.get('/media', (req, res) => {
     })
 });
 
+//get route to retrieve product recommendation count
 router.get('/product', (req, res) => {
   const queryText = `SELECT count(*) FROM "recommendation"
   JOIN "category" ON "category"."id" = "recommendation"."category_id"
@@ -31,6 +32,7 @@ router.get('/product', (req, res) => {
     })
 });
 
+//get route to fetch business recommendation count
 router.get('/business', (req, res) => {
   const queryText = `SELECT count(*) FROM "recommendation"
   JOIN "category" ON "category"."id" = "recommendation"."category_id"
@@ -45,6 +47,7 @@ router.get('/business', (req, res) => {
     })
 });
 
+//get route to fetch other recommendation count
 router.get('/other', (req, res) => {
   const queryText = `SELECT count(*) FROM "recommendation"
   JOIN "category" ON "category"."id" = "recommendation"."category_id"
