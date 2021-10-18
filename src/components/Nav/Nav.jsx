@@ -3,9 +3,35 @@ import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
+import Button from '@mui/material/Button';
+import List from '@mui/material/List';
+import Drawer from '@mui/material/Drawer';
+import ListItem from '@mui/material/ListItem';
 
 function Nav() {
+
   const user = useSelector((store) => store.user);
+  const [state, setState] = useState(false);
+
+  const toggleDrawer = (open) => (event) => {
+    setState(open)
+  }
+
+  const list = () => (
+    <div onClick={toggleDrawer(false)}>
+      <List>
+        <ListItem>Add a Recommendation</ListItem>
+        <ListItem>Media</ListItem>
+        <ListItem>Products</ListItem>
+        <ListItem>Businesses</ListItem>
+        <ListItem>Other</ListItem>
+        <ListItem>Favorites!</ListItem>
+        <ListItem>Home</ListItem>
+        <ListItem>Logout</ListItem>
+      </List>
+    </div>
+  )
 
   return (
     <div className="nav">
@@ -55,6 +81,15 @@ function Nav() {
             <LogOutButton className="navLink" />
           </>
         )}
+
+        <Button onClick={toggleDrawer(true)}>Open From Left</Button>
+        <Drawer
+          anchor={'left'}
+          open={state}
+          onClose={toggleDrawer(false)}
+        >
+          {list()}
+        </Drawer>
 
       </div>
     </div>

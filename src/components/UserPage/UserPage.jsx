@@ -10,9 +10,6 @@ import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
 import TableBody from '@mui/material/TableBody';
 import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import Drawer from '@mui/material/Drawer';
-import ListItem from '@mui/material/ListItem';
 
 
 function UserPage() {
@@ -50,26 +47,9 @@ function UserPage() {
     history.push('/other');
   }
 
-  const [state, setState] = React.useState(false);
+  
 
-  const toggleDrawer = (open) => (event) => {
-    setState(open)
-  }
-
-  const list = () => (
-    <div onClick={toggleDrawer(false)}>
-    <List>
-      <ListItem>Add a Recommendation</ListItem>
-      <ListItem>Media</ListItem>
-      <ListItem>Products</ListItem>
-      <ListItem>Businesses</ListItem>
-      <ListItem>Other</ListItem>
-      <ListItem>Favorites!</ListItem>
-      <ListItem>Home</ListItem>
-      <ListItem>Logout</ListItem>
-    </List>
-    </div>
-  )
+  
 
   return (
     <div>
@@ -113,14 +93,7 @@ function UserPage() {
       </Table>
       </TableContainer>
 
-      <Button onClick={toggleDrawer(true)}>Open From Left</Button>
-          <Drawer
-          anchor={'left'}
-          open={state}
-          onClose={toggleDrawer(false)}
-          >
-              {list()}
-            </Drawer>
+     
 
       </div>
 
