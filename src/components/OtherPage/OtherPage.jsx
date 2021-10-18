@@ -31,6 +31,7 @@ function OtherPage () {
         <>
         <h2>Other Recommendations Page</h2>
          {other.map((other) =>
+         <TableContainer component={Paper}>
                 <Table key={other.id}>
                     <TableHead>
                         <TableRow>
@@ -51,6 +52,7 @@ function OtherPage () {
                         </TableRow>
                     </TableBody>
                 </Table>
+                </TableContainer>
             )}
         </>
     )

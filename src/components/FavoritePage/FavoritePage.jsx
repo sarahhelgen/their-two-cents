@@ -1,5 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 
 function FavoritePage() {
 
@@ -21,25 +28,28 @@ function FavoritePage() {
         <>
             <h2>Favorites Page</h2>
             {/* {JSON.stringify(favorites)} */}
+
             {favorites.map((favorite) =>
-                <table key={favorite.id}>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Notes</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{favorite.name}</td>
-                            <td>{favorite.type}</td>
-                            <td>{favorite.notes}</td>
-                            <td><button onClick={(event) => deleteFavorite(favorite.rec_id)}>Delete</button></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <TableContainer component={Paper}>
+                <Table key={favorite.id}>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Name</TableCell>
+                            <TableCell>Type</TableCell>
+                            <TableCell>Notes</TableCell>
+                            <TableCell>Delete</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        <TableRow>
+                            <TableCell>{favorite.name}</TableCell>
+                            <TableCell>{favorite.type}</TableCell>
+                            <TableCell>{favorite.notes}</TableCell>
+                            <TableCell><button onClick={(event) => deleteFavorite(favorite.rec_id)}>Delete</button></TableCell>
+                        </TableRow>
+                    </TableBody>
+                </Table>
+                </TableContainer>
             )}
         </>
     )
