@@ -1,5 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import { Tab } from '@mui/material';
 
 function ProductPage () {
     const dispatch = useDispatch();
@@ -27,26 +35,26 @@ function ProductPage () {
             <h2>Products Page</h2>
 
         {products.map((product) =>
-                <table key={product.id}>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Notes</th>
-                            <th>Favorite</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{product.name}</td>
-                            <td>{product.type}</td>
-                            <td>{product.notes}</td>
-                            <td><button onClick={(event) => favoriteProduct(product.rec_id)}>Favorite!</button></td>
-                            <td><button onClick={(event) => deleteProduct(product.rec_id)}>Delete</button></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <Table key={product.id}>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Name</TableCell>
+                            <TableCell>Type</TableCell>
+                            <TableCell>Notes</TableCell>
+                            <TableCell>Favorite</TableCell>
+                            <TableCell>Delete</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        <TableRow>
+                            <TableCell>{product.name}</TableCell>
+                            <TableCell>{product.type}</TableCell>
+                            <TableCell>{product.notes}</TableCell>
+                            <TableCell><button onClick={(event) => favoriteProduct(product.rec_id)}>Favorite!</button></TableCell>
+                            <TableCell><button onClick={(event) => deleteProduct(product.rec_id)}>Delete</button></TableCell>
+                        </TableRow>
+                    </TableBody>
+                </Table>
             )}
         </>
     )
