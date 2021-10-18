@@ -40,7 +40,7 @@ function MediaPage() {
                             <TableCell>Delete</TableCell>
                         </TableRow>
                     </TableHead>
-                    {media.map((media) =>
+                    {/* {media.map((media) => */}
                       <TableBody key={media.id}>
                         <TableRow>
                             <TableCell align="right">{media.name}</TableCell>
@@ -53,7 +53,7 @@ function MediaPage() {
                 </Table>
                 </TableContainer>
                
-            )}
+            // )}
 
         
 

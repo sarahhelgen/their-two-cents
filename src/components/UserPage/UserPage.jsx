@@ -42,10 +42,10 @@ function UserPage() {
   return (
     <div>
 
-      {JSON.stringify(mediaCount)}
+      {/* {JSON.stringify(mediaCount)}
       {JSON.stringify(productCount)}
       {JSON.stringify(businessCount)}
-      {JSON.stringify(otherCount)}
+      {JSON.stringify(otherCount)} */}
 
       <table>
         <thead>
@@ -58,22 +58,22 @@ function UserPage() {
         <tbody>
           <tr>
             <td>Media</td>
-            <td>number of recs</td>
+            <td>{mediaCount[0].count}</td>
             <td><button onClick={goToMedia}>Details</button></td>
           </tr>
           <tr>
             <td>Products</td>
-            <td>number of recs</td>
+            <td>{productCount[0].count}</td>
             <td><button onClick={goToProducts}>Details</button></td>
           </tr>
           <tr>
             <td>Businesses</td>
-            <td>number of recs</td>
+            <td>{businessCount[0].count}</td>
             <td><button onClick={goToBusiness}>Details</button></td>
           </tr>
           <tr>
             <td>Other</td>
-            <td>number of recs</td>
+            <td>{otherCount[0].count}</td>
             <td><button onClick ={goToOther}>Details</button></td>
           </tr>
         </tbody>
