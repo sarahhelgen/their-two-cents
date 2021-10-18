@@ -2,8 +2,13 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import Select from '@mui/material/Select';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
 
 function AddPage() {
 
@@ -44,18 +49,18 @@ function AddPage() {
 
     return (
 
-        <form onSubmit={addNewRecommendation}>
+        <FormControl fullWidth onSubmit={addNewRecommendation}>
             <TextField id="outlined-basic" label="Name" variant="outlined" type="text" placeholder="Name" value={name} onChange={(event) => setName(event.target.value)} />
             <TextField id="outlined-basic" label="Type" variant="outlined" type="text" placeholder="Type" value={type} onChange={(event) => setType(event.target.value)} />
             <TextField id="outlined-basic" label="Notes" variant="outlined"type="text" placeholder="Notes" value={notes} onChange={(event) => setNotes(event.target.value)} />
-            <select onChange={(event) => setCategory(event.target.value)}>
-                <option value={1}>Media</option>
-                <option value={2}>Business</option>
-                <option value={3}>Product </option>
-                <option value={4}>Other</option>
-            </select>
-            <button type="submit">Submit</button>
-        </form>
+            <Select label="Category" onChange={(event) => setCategory(event.target.value)}>
+                <MenuItem value={1}>Media</MenuItem>
+                <MenuItem value={2}>Business</MenuItem>
+                <MenuItem value={3}>Product </MenuItem>
+                <MenuItem value={4}>Other</MenuItem>
+            </Select>
+            <Button variant="contained" type="submit">Submit</Button>
+        </FormControl>
     )
 
 }
