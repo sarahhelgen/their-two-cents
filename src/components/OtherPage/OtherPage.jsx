@@ -1,5 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 
 function OtherPage () {
 
@@ -24,26 +31,26 @@ function OtherPage () {
         <>
         <h2>Other Recommendations Page</h2>
          {other.map((other) =>
-                <table key={other.id}>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Notes</th>
-                            <th>Favorite</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{other.name}</td>
-                            <td>{other.type}</td>
-                            <td>{other.notes}</td>
-                            <td><button onClick={(event) => favoriteOther(other.rec_id)}>Favorite!</button></td>
-                            <td><button onClick={(event) => deleteOther(other.rec_id)}>Delete</button></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <Table key={other.id}>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Name</TableCell>
+                            <TableCell>Type</TableCell>
+                            <TableCell>Notes</TableCell>
+                            <TableCell>Favorite</TableCell>
+                            <TableCell>Delete</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        <TableRow>
+                            <TableCell>{other.name}</TableCell>
+                            <TableCell>{other.type}</TableCell>
+                            <TableCell>{other.notes}</TableCell>
+                            <TableCell><button onClick={(event) => favoriteOther(other.rec_id)}>Favorite!</button></TableCell>
+                            <TableCell><button onClick={(event) => deleteOther(other.rec_id)}>Delete</button></TableCell>
+                        </TableRow>
+                    </TableBody>
+                </Table>
             )}
         </>
     )

@@ -7,7 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Tab } from '@mui/material';
+
 
 function ProductPage () {
     const dispatch = useDispatch();
@@ -33,8 +33,9 @@ function ProductPage () {
 
         <>
             <h2>Products Page</h2>
-
+        
         {products.map((product) =>
+            <TableContainer component={Paper}>
                 <Table key={product.id}>
                     <TableHead>
                         <TableRow>
@@ -55,6 +56,7 @@ function ProductPage () {
                         </TableRow>
                     </TableBody>
                 </Table>
+                </TableContainer>
             )}
         </>
     )
