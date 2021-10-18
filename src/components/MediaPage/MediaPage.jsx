@@ -40,20 +40,25 @@ function MediaPage() {
                             <TableCell>Delete</TableCell>
                         </TableRow>
                     </TableHead>
-                    {/* {media.map((media) => */}
-                      <TableBody key={media.id}>
+                        <TableBody>
                         <TableRow>
-                            <TableCell align="right">{media.name}</TableCell>
-                            <TableCell align="right">{media.type}</TableCell>
-                            <TableCell align="right">{media.notes}</TableCell>
-                            <TableCell align="right"><button onClick={(event) => favoriteMedia(media.rec_id)}>Favorite!</button></TableCell>
-                            <TableCell align="right"><button onClick={(event) => deleteMedia(media.rec_id)}>Delete</button></TableCell>
+                            {
+                                media.map(media => (
+                                    <>
+                                    <TableCell align="right">{media.name}</TableCell>
+                                    <TableCell align="right">{media.type}</TableCell>
+                                    <TableCell align="right">{media.notes}</TableCell>
+                                    <TableCell align="right"><button onClick={(event) => favoriteMedia(media.rec_id)}>Favorite!</button></TableCell>
+                                    <TableCell align="right"><button onClick={(event) => deleteMedia(media.rec_id)}>Delete</button></TableCell>
+                                    </>
+                                ))
+                            }
                         </TableRow>
                     </TableBody>
                 </Table>
                 </TableContainer>
                
-            // )}
+            
 
         
 
