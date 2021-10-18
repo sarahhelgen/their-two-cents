@@ -6,6 +6,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
 import TableBody from '@mui/material/TableBody';
+import Paper from '@mui/material/Paper';
 
 function MediaPage() {
 
@@ -28,7 +29,7 @@ function MediaPage() {
 
     return (
 
-            <TableContainer>
+            <TableContainer component={Paper}>
                 <Table>
                     <TableHead>
                         <TableRow>
@@ -42,11 +43,11 @@ function MediaPage() {
                     {media.map((media) =>
                       <TableBody key={media.id}>
                         <TableRow>
-                            <TableCell>{media.name}</TableCell>
-                            <TableCell>{media.type}</TableCell>
-                            <TableCell>{media.notes}</TableCell>
-                            <TableCell><button onClick={(event) => favoriteMedia(media.rec_id)}>Favorite!</button></TableCell>
-                            <TableCell><button onClick={(event) => deleteMedia(media.rec_id)}>Delete</button></TableCell>
+                            <TableCell align="right">{media.name}</TableCell>
+                            <TableCell align="right">{media.type}</TableCell>
+                            <TableCell align="right">{media.notes}</TableCell>
+                            <TableCell align="right"><button onClick={(event) => favoriteMedia(media.rec_id)}>Favorite!</button></TableCell>
+                            <TableCell align="right"><button onClick={(event) => deleteMedia(media.rec_id)}>Delete</button></TableCell>
                         </TableRow>
                     </TableBody>
                 </Table>
