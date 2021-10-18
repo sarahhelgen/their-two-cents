@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
 
 function FavoritePage() {
 
@@ -45,7 +46,7 @@ function FavoritePage() {
                             <TableCell>{favorite.name}</TableCell>
                             <TableCell>{favorite.type}</TableCell>
                             <TableCell>{favorite.notes}</TableCell>
-                            <TableCell><button onClick={(event) => deleteFavorite(favorite.rec_id)}>Delete</button></TableCell>
+                            <TableCell><Button variant="text" onClick={(event) => deleteFavorite(favorite.rec_id)}>Delete</Button></TableCell>
                         </TableRow>
                     </TableBody>
                 </Table>

@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
 
 
 function ProductPage () {
@@ -51,8 +52,8 @@ function ProductPage () {
                             <TableCell>{product.name}</TableCell>
                             <TableCell>{product.type}</TableCell>
                             <TableCell>{product.notes}</TableCell>
-                            <TableCell><button onClick={(event) => favoriteProduct(product.rec_id)}>Favorite!</button></TableCell>
-                            <TableCell><button onClick={(event) => deleteProduct(product.rec_id)}>Delete</button></TableCell>
+                            <TableCell><Button variant="text" onClick={(event) => favoriteProduct(product.rec_id)}>Favorite!</Button></TableCell>
+                            <TableCell><Button variant="text" onClick={(event) => deleteProduct(product.rec_id)}>Delete</Button></TableCell>
                         </TableRow>
                     </TableBody>
                 </Table>

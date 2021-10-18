@@ -7,6 +7,7 @@ import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
 import TableBody from '@mui/material/TableBody';
 import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
 
 function MediaPage() {
 
@@ -52,8 +53,8 @@ function MediaPage() {
                                     <TableCell align="right">{media.name}</TableCell>
                                     <TableCell align="right">{media.type}</TableCell>
                                     <TableCell align="right">{media.notes}</TableCell>
-                                    <TableCell align="right"><button onClick={(event) => favoriteMedia(media.rec_id)}>Favorite!</button></TableCell>
-                                    <TableCell align="right"><button onClick={(event) => deleteMedia(media.rec_id)}>Delete</button></TableCell>
+                                    <TableCell align="right"><Button variant="text" onClick={(event) => favoriteMedia(media.rec_id)}>Favorite!</Button></TableCell>
+                                    <TableCell align="right"><Button variant="text" onClick={(event) => deleteMedia(media.rec_id)}>Delete</Button></TableCell>
                                     </>
                                 ))
                             }
