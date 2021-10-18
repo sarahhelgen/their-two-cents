@@ -29,6 +29,10 @@ function MediaPage() {
 
     return (
 
+       <div>
+
+            <h2>Media Recommendations Page</h2>
+
             <TableContainer component={Paper}>
                 <Table>
                     <TableHead>
@@ -57,11 +61,8 @@ function MediaPage() {
                     </TableBody>
                 </Table>
                 </TableContainer>
-               
-            
 
-        
-
+            </div>
     
     )
 }

@@ -22,6 +22,7 @@ function OtherPage () {
     return(
 
         <>
+        <h2>Other Recommendations Page</h2>
          {other.map((other) =>
                 <table key={other.id}>
                     <thead>

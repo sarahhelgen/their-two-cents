@@ -24,6 +24,8 @@ function ProductPage () {
 
 
         <>
+            <h2>Products Page</h2>
+
         {products.map((product) =>
                 <table key={product.id}>
                     <thead>

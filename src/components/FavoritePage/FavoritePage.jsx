@@ -19,6 +19,7 @@ function FavoritePage() {
     return (
 
         <>
+            <h2>Favorites Page</h2>
             {/* {JSON.stringify(favorites)} */}
             {favorites.map((favorite) =>
                 <table key={favorite.id}>
