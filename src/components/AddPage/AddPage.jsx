@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
 function AddPage() {
 
@@ -42,9 +45,9 @@ function AddPage() {
     return (
 
         <form onSubmit={addNewRecommendation}>
-            <input type="text" placeholder="Name" value={name} onChange={(event) => setName(event.target.value)}></input>
-            <input type="text" placeholder="Type" value={type} onChange={(event) => setType(event.target.value)}></input>
-            <input type="text" placeholder="Notes" value={notes} onChange={(event) => setNotes(event.target.value)}></input>
+            <TextField id="outlined-basic" label="Name" variant="outlined" type="text" placeholder="Name" value={name} onChange={(event) => setName(event.target.value)} />
+            <TextField id="outlined-basic" label="Type" variant="outlined" type="text" placeholder="Type" value={type} onChange={(event) => setType(event.target.value)} />
+            <TextField id="outlined-basic" label="Notes" variant="outlined"type="text" placeholder="Notes" value={notes} onChange={(event) => setNotes(event.target.value)} />
             <select onChange={(event) => setCategory(event.target.value)}>
                 <option value={1}>Media</option>
                 <option value={2}>Business</option>
