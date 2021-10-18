@@ -8,6 +8,8 @@ import TableCell from '@mui/material/TableCell';
 import Paper from '@mui/material/Paper';
 import TableContainer from '@mui/material/TableContainer';
 import Button from '@mui/material/Button';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function BusinessPage() {
 
@@ -49,8 +51,8 @@ function BusinessPage() {
                                     <TableCell  key={business.id}>{business.name}</TableCell>
                                     <TableCell>{business.type}</TableCell>
                                     <TableCell>{business.notes}</TableCell>
-                                    <TableCell><Button variant="text" onClick={(event) => favoriteBusiness(business.rec_id)}>Favorite!</Button></TableCell>
-                                    <TableCell><Button variant="text" onClick={(event) => deleteBusiness(business.rec_id)}>Delete</Button></TableCell>
+                                    <TableCell><Button variant="text" onClick={(event) => favoriteBusiness(business.rec_id)}><FavoriteIcon /></Button></TableCell>
+                                    <TableCell><Button variant="text" onClick={(event) => deleteBusiness(business.rec_id)}><DeleteIcon /></Button></TableCell>
                                 </>
                             })
                             }

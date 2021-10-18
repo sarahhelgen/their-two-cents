@@ -8,6 +8,8 @@ import TableCell from '@mui/material/TableCell';
 import TableBody from '@mui/material/TableBody';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function MediaPage() {
 
@@ -50,11 +52,11 @@ function MediaPage() {
                             {
                                 media.map(media => (
                                     <>
-                                    <TableCell align="right">{media.name}</TableCell>
-                                    <TableCell align="right">{media.type}</TableCell>
-                                    <TableCell align="right">{media.notes}</TableCell>
-                                    <TableCell align="right"><Button variant="text" onClick={(event) => favoriteMedia(media.rec_id)}>Favorite!</Button></TableCell>
-                                    <TableCell align="right"><Button variant="text" onClick={(event) => deleteMedia(media.rec_id)}>Delete</Button></TableCell>
+                                    <TableCell>{media.name}</TableCell>
+                                    <TableCell>{media.type}</TableCell>
+                                    <TableCell>{media.notes}</TableCell>
+                                    <TableCell><Button variant="text" onClick={(event) => favoriteMedia(media.rec_id)}><FavoriteIcon /></Button></TableCell>
+                                    <TableCell><Button variant="text" onClick={(event) => deleteMedia(media.rec_id)}><DeleteIcon /></Button></TableCell>
                                     </>
                                 ))
                             }
