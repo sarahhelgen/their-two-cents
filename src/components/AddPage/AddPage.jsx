@@ -70,9 +70,9 @@ function AddPage() {
 
         <Container component={Paper}>
         <form noValidate autoComplete="off" onSubmit={addNewRecommendation}>
-            <TextField fullWidth error={nameError} id="outlined-basic" label="Name" variant="outlined" type="text" required value={name} onChange={(event) => setName(event.target.value)} />
-            <TextField fullWidth error={typeError} id="outlined-basic" label="Type" variant="outlined" type="text" required value={type} onChange={(event) => setType(event.target.value)} />
-            <TextField fullWidth error={notesError} multiline rows={4} id="outlined-basic" label="Notes" variant="outlined"type="text" required value={notes} onChange={(event) => setNotes(event.target.value)} />
+            <TextField className={classes.field} fullWidth error={nameError} id="outlined-basic" label="Name" variant="outlined" type="text" required value={name} onChange={(event) => setName(event.target.value)} />
+            <TextField className={classes.field} fullWidth error={typeError} id="outlined-basic" label="Type" variant="outlined" type="text" required value={type} onChange={(event) => setType(event.target.value)} />
+            <TextField className={classes.field} fullWidth error={notesError} multiline rows={4} id="outlined-basic" label="Notes" variant="outlined"type="text" required value={notes} onChange={(event) => setNotes(event.target.value)} />
                 <FormControl className={classes.field}>
                 <FormLabel>Choose a category: </FormLabel>
                 <RadioGroup value={category} onChange={(event) => setCategory(event.target.value)}>
