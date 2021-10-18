@@ -24,6 +24,10 @@ import BusinessPage from '../BusinessPage/BusinessPage';
 import ProductPage from '../ProductPage/ProductPage';
 import OtherPage from '../OtherPage/OtherPage';
 
+
+
+
+
 import './App.css';
 
 function App() {
@@ -144,6 +148,8 @@ function App() {
               <LandingPage />
             }
           </Route>
+
+         
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>

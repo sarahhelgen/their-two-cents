@@ -10,6 +10,10 @@ import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
 import TableBody from '@mui/material/TableBody';
 import Button from '@mui/material/Button';
+import List from '@mui/material/List';
+import Drawer from '@mui/material/Drawer';
+import ListItem from '@mui/material/ListItem';
+
 
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
@@ -17,20 +21,20 @@ function UserPage() {
   const dispatch = useDispatch();
   const history = useHistory();
   const mediaCount = useSelector(store => store.recommendations.media);
-  const productCount = useSelector( store => store.recommendations.product );
-  const businessCount = useSelector( store => store.recommendations.business );
-  const otherCount = useSelector( store => store.recommendations.other);
+  const productCount = useSelector(store => store.recommendations.product);
+  const businessCount = useSelector(store => store.recommendations.business);
+  const otherCount = useSelector(store => store.recommendations.other);
 
   useEffect(() => {
     dispatch({ type: 'FETCH_MEDIA_COUNT' });
-    dispatch({ type: 'FETCH_PRODUCT_COUNT'});
-    dispatch({ type: 'FETCH_BUSINESS_COUNT'});
-    dispatch({ type: 'FETCH_OTHER_COUNT'});
+    dispatch({ type: 'FETCH_PRODUCT_COUNT' });
+    dispatch({ type: 'FETCH_BUSINESS_COUNT' });
+    dispatch({ type: 'FETCH_OTHER_COUNT' });
   }, []);
 
-  
 
-  const goToMedia = () =>{
+
+  const goToMedia = () => {
     history.push('/media');
   }
 
@@ -46,6 +50,26 @@ function UserPage() {
     history.push('/other');
   }
 
+  const [state, setState] = React.useState(false);
+
+  const toggleDrawer = (open) => (event) => {
+    setState(open)
+  }
+
+  const list = () => (
+    <div onClick={toggleDrawer(false)}>
+    <List>
+      <ListItem>Add a Recommendation</ListItem>
+      <ListItem>Media</ListItem>
+      <ListItem>Products</ListItem>
+      <ListItem>Businesses</ListItem>
+      <ListItem>Other</ListItem>
+      <ListItem>Favorites!</ListItem>
+      <ListItem>Home</ListItem>
+      <ListItem>Logout</ListItem>
+    </List>
+    </div>
+  )
 
   return (
     <div>
@@ -88,8 +112,23 @@ function UserPage() {
         </TableBody>
       </Table>
       </TableContainer>
+
+      <Button onClick={toggleDrawer(true)}>Open From Left</Button>
+          <Drawer
+          anchor={'left'}
+          open={state}
+          onClose={toggleDrawer(false)}
+          >
+              {list()}
+            </Drawer>
+
       </div>
-    
+
+
+       
+
+
+
 
 
   );
