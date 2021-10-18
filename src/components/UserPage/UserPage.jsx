@@ -9,6 +9,7 @@ import Paper from '@mui/material/Paper';
 import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
 import TableBody from '@mui/material/TableBody';
+import Button from '@mui/material/Button';
 
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
@@ -67,22 +68,22 @@ function UserPage() {
           <TableRow>
             <TableCell>Media</TableCell>
             {/* <TableCell>{mediaCount[0].count}</TableCell> */}
-            <TableCell><button onClick={goToMedia}>Details</button></TableCell>
+            <TableCell><Button variant="text" onClick={goToMedia}>Details</Button></TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Products</TableCell>
             {/* <TableCell>{productCount[0].count}</TableCell> */}
-            <TableCell><button onClick={goToProducts}>Details</button></TableCell>
+            <TableCell><Button variant="text" onClick={goToProducts}>Details</Button></TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Businesses</TableCell>
             {/* <TableCell>{businessCount[0].count}</TableCell> */}
-            <TableCell><button onClick={goToBusiness}>Details</button></TableCell>
+            <TableCell><Button variant="text" onClick={goToBusiness}>Details</Button></TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Other</TableCell>
             {/* <TableCell>{otherCount[0].count}</TableCell> */}
-            <TableCell><button onClick ={goToOther}>Details</button></TableCell>
+            <TableCell><Button variant ="text" onClick ={goToOther}>Details</Button></TableCell>
           </TableRow>
         </TableBody>
       </Table>
