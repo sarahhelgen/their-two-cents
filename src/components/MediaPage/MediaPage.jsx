@@ -1,5 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import Table from '@mui/material/Table';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import TableCell from '@mui/material/TableCell';
+import TableBody from '@mui/material/TableBody';
+import Paper from '@mui/material/Paper';
 
 function MediaPage() {
 
@@ -22,33 +29,35 @@ function MediaPage() {
 
     return (
 
-        <>
-            {media.map((media) =>
-                <table key={media.id}>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Notes</th>
-                            <th>Favorite</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{media.name}</td>
-                            <td>{media.type}</td>
-                            <td>{media.notes}</td>
-                            <td><button onClick={(event) => favoriteMedia(media.rec_id)}>Favorite!</button></td>
-                            <td><button onClick={(event) => deleteMedia(media.rec_id)}>Delete</button></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <TableContainer component={Paper}>
+                <Table>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Name</TableCell>
+                            <TableCell>Type</TableCell>
+                            <TableCell>Notes</TableCell>
+                            <TableCell>Favorite</TableCell>
+                            <TableCell>Delete</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    {media.map((media) =>
+                      <TableBody key={media.id}>
+                        <TableRow>
+                            <TableCell align="right">{media.name}</TableCell>
+                            <TableCell align="right">{media.type}</TableCell>
+                            <TableCell align="right">{media.notes}</TableCell>
+                            <TableCell align="right"><button onClick={(event) => favoriteMedia(media.rec_id)}>Favorite!</button></TableCell>
+                            <TableCell align="right"><button onClick={(event) => deleteMedia(media.rec_id)}>Delete</button></TableCell>
+                        </TableRow>
+                    </TableBody>
+                </Table>
+                </TableContainer>
+               
             )}
 
+        
 
-
-        </>
+    
     )
 }
 
