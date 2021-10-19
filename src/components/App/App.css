@@ -2,13 +2,13 @@ html,
 body,
 #react-root {
   height: 100%;
-  background-color: #f4f1de;
+  background-color: #f2cc8f;
 }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
-  background-color: #f4f1de;
+  background-color: #f2cc8f;
 }
 
 img {

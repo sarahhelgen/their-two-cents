@@ -10,34 +10,45 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DeleteIcon from '@mui/icons-material/Delete';
-import Typography from '@mui/material/Typography'
+import Typography from '@mui/material/Typography';
+import {makeStyles} from '@mui/styles';
 
-function OtherPage () {
+function OtherPage() {
 
-        const dispatch = useDispatch();
-        const other = useSelector(store => store.recommendations.other );
+    const dispatch = useDispatch();
+    const other = useSelector(store => store.recommendations.other);
 
-        useEffect(() => {
-            dispatch({ type: 'FETCH_OTHER' });
-        }, []);
+    useEffect(() => {
+        dispatch({ type: 'FETCH_OTHER' });
+    }, []);
 
-        const deleteOther = ( otherId ) => {
-            dispatch({ type: 'DELETE_OTHER', payload: otherId });
-        }
-
-        const favoriteOther = ( otherId ) => {
-            dispatch({ type: 'FAVORITE_OTHER', payload: otherId });
+    const useStyles = makeStyles({
+        paperColor: {
+            backgroundColor: '#f4f1de',
             
-        }
+        },
+    })
 
-    return(
+    const classes = useStyles();
 
-    
+    const deleteOther = (otherId) => {
+        dispatch({ type: 'DELETE_OTHER', payload: otherId });
+    }
+
+    const favoriteOther = (otherId) => {
+        dispatch({ type: 'FAVORITE_OTHER', payload: otherId });
+
+    }
+
+    return (
+
+
         <div>
             <Typography variant="h5" align="center">
-                    Other Recommendations
-                </Typography>
-     <TableContainer component={Paper}>
+                Other Recommendations
+            </Typography>
+
+            <TableContainer component={Paper} variant= "outlined" elevation={8} className={classes.paperColor}>
                 <Table>
                     <TableHead>
                         <TableRow>
@@ -49,22 +60,22 @@ function OtherPage () {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                    {other.map((other) =>
-                        <TableRow key={other.id}>
-                            <TableCell>{other.name}</TableCell>
-                            <TableCell>{other.type}</TableCell>
-                            <TableCell>{other.notes}</TableCell>
-                            <TableCell><Button variant="text" onClick={(event) => favoriteOther(other.rec_id)}><FavoriteIcon /></Button></TableCell>
-                            <TableCell><Button variant="text" onClick={(event) => deleteOther(other.rec_id)}><DeleteIcon /></Button></TableCell>
-                        </TableRow>
+                        {other.map((other) =>
+                            <TableRow key={other.id}>
+                                <TableCell>{other.name}</TableCell>
+                                <TableCell>{other.type}</TableCell>
+                                <TableCell>{other.notes}</TableCell>
+                                <TableCell><Button variant="text" onClick={(event) => favoriteOther(other.rec_id)}><FavoriteIcon /></Button></TableCell>
+                                <TableCell><Button variant="text" onClick={(event) => deleteOther(other.rec_id)}><DeleteIcon /></Button></TableCell>
+                            </TableRow>
                         )}
                     </TableBody>
                 </Table>
-                </TableContainer>
-                </div>
-            
-            
-        
+            </TableContainer>
+        </div>
+
+
+
     )
 }
 
