@@ -62,7 +62,7 @@ function UserPage() {
 
 
       <TableContainer component={Paper}>
-      <Table>
+      <Table size="small">
         <TableHead>
           <TableRow>
             <TableCell align="left">Category</TableCell>

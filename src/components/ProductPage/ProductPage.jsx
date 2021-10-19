@@ -41,7 +41,7 @@ function ProductPage () {
             </Typography>
         
             <TableContainer component={Paper}>
-                <Table>
+                <Table size="small">
                     <TableHead>
                         <TableRow>
                             <TableCell align="left">Name</TableCell>

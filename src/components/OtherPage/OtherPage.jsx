@@ -52,7 +52,7 @@ function OtherPage() {
             </Typography>
 
             <TableContainer component={Paper} variant= "outlined" elevation={8} className={classes.paperColor}>
-                <Table className={classes.table} aria-label="simple table">
+                <Table className={classes.table} size="small">
                     <TableHead>
                         <TableRow>
                             <TableCell align="left">Name</TableCell>
