@@ -10,7 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
 import TableBody from '@mui/material/TableBody';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 
 function UserPage() {
@@ -73,23 +73,23 @@ function UserPage() {
         <TableBody>
           <TableRow>
             <TableCell>Media</TableCell>
-            <TableCell>{mediaCount[0].count}</TableCell>
-            <TableCell><Button variant="text" onClick={goToMedia}>Details</Button></TableCell>
+            {/* <TableCell>{mediaCount[0].count}</TableCell> */}
+            <TableCell><Button variant="contained" onClick={goToMedia} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Products</TableCell>
-            <TableCell>{productCount[0].count}</TableCell>
-            <TableCell><Button variant="text" onClick={goToProducts}>Details</Button></TableCell>
+            {/* <TableCell>{productCount[0].count}</TableCell> */}
+            <TableCell><Button variant="contained" onClick={goToProducts} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Businesses</TableCell>
-            <TableCell>{businessCount[0].count}</TableCell>
-            <TableCell><Button variant="text" onClick={goToBusiness}>Details</Button></TableCell>
+            {/* <TableCell>{businessCount[0].count}</TableCell> */}
+            <TableCell><Button variant="contained" onClick={goToBusiness} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Other</TableCell>
-            <TableCell>{otherCount[0].count}</TableCell>
-            <TableCell><Button variant ="text" onClick ={goToOther}>Details</Button></TableCell>
+            {/* <TableCell>{otherCount[0].count}</TableCell> */}
+            <TableCell><Button variant ="contained" onClick ={goToOther} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
           </TableRow>
         </TableBody>
       </Table>
