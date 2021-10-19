@@ -10,6 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
 import TableBody from '@mui/material/TableBody';
 import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
 
 
 function UserPage() {
@@ -59,7 +60,8 @@ function UserPage() {
       {JSON.stringify(businessCount)}
       {JSON.stringify(otherCount)}
 
-      <TableContainer component={Paper}>
+
+      <TableContainer>
       <Table>
         <TableHead>
           <TableRow>

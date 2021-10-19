@@ -10,6 +10,7 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DeleteIcon from '@mui/icons-material/Delete';
+import Typography from '@mui/material/Typography'
 
 function OtherPage () {
 
@@ -24,18 +25,20 @@ function OtherPage () {
             dispatch({ type: 'DELETE_OTHER', payload: otherId });
         }
 
-        const favoriteOther = () => {
+        const favoriteOther = ( otherId ) => {
             dispatch({ type: 'FAVORITE_OTHER', payload: otherId });
             
         }
 
     return(
 
-        <>
-        <h2>Other Recommendations Page</h2>
-         {other.map((other) =>
-         <TableContainer component={Paper}>
-                <Table key={other.id}>
+    
+        <div>
+            <Typography variant="h5" align="center">
+                    Other Recommendations
+                </Typography>
+     <TableContainer component={Paper}>
+                <Table>
                     <TableHead>
                         <TableRow>
                             <TableCell>Name</TableCell>
@@ -46,18 +49,22 @@ function OtherPage () {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        <TableRow>
+                    {other.map((other) =>
+                        <TableRow key={other.id}>
                             <TableCell>{other.name}</TableCell>
                             <TableCell>{other.type}</TableCell>
                             <TableCell>{other.notes}</TableCell>
                             <TableCell><Button variant="text" onClick={(event) => favoriteOther(other.rec_id)}><FavoriteIcon /></Button></TableCell>
                             <TableCell><Button variant="text" onClick={(event) => deleteOther(other.rec_id)}><DeleteIcon /></Button></TableCell>
                         </TableRow>
+                        )}
                     </TableBody>
                 </Table>
                 </TableContainer>
-            )}
-        </>
+                </div>
+            
+            
+        
     )
 }
 

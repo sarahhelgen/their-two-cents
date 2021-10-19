@@ -4,7 +4,6 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
-import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import Drawer from '@mui/material/Drawer';
 import ListItem from '@mui/material/ListItem';
@@ -17,7 +16,6 @@ import HomeIcon from '@mui/icons-material/Home';
 import ListItemText from '@mui/material/ListItemText';
 import TheatersIcon from '@mui/icons-material/Theaters';
 import BusinessIcon from '@mui/icons-material/Business';
-import NordicWalkingIcon from '@mui/icons-material/NordicWalking';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import TerrainIcon from '@mui/icons-material/Terrain';
 import WidgetsIcon from '@mui/icons-material/Widgets';
@@ -42,7 +40,6 @@ function Nav() {
     },
     drawer: {
       width: drawerWidth,
-
     },
     drawerPaper: {
       width: drawerWidth,
@@ -53,9 +50,7 @@ function Nav() {
     link: {
       textDecoration: 'none',
       color: 'black',
-
     }
-
   })
 
   const classes = useStyles();
@@ -65,7 +60,6 @@ function Nav() {
       <Typography variant="h6">
 
         <List>
-
           <Link to="/user" className={classes.link}>
             <ListItem button>
               <ListItemIcon>
@@ -74,7 +68,6 @@ function Nav() {
               <ListItemText primary={"Home"} />
             </ListItem>
           </Link>
-
           <Link to="/add" className={classes.link} >
             <ListItem button>
               <ListItemIcon>
@@ -83,7 +76,6 @@ function Nav() {
               <ListItemText primary={"Add Recommendation"} />
             </ListItem>
           </Link>
-
           <Link to="/media" className={classes.link}>
             <ListItem button>
               <ListItemIcon>
@@ -92,7 +84,6 @@ function Nav() {
               <ListItemText primary={"Media"} />
             </ListItem>
           </Link>
-
           <Link to="/business"className={classes.link}>
             <ListItem button>
               <ListItemIcon>
@@ -101,7 +92,6 @@ function Nav() {
               <ListItemText primary={"Business"} />
             </ListItem>
           </Link>
-
           <Link to="/product" className={classes.link}>
             <ListItem button>
               <ListItemIcon>
@@ -110,7 +100,6 @@ function Nav() {
               <ListItemText primary={"Product"} />
             </ListItem>
           </Link>
-
           <Link to="/other" className={classes.link}>
             <ListItem button>
               <ListItemIcon>
@@ -119,7 +108,6 @@ function Nav() {
               <ListItemText primary={"Other"} />
             </ListItem>
           </Link>
-
           <Link to="/favorite" className={classes.link}>
             <ListItem button>
               <ListItemIcon>
@@ -129,7 +117,6 @@ function Nav() {
             </ListItem>
           </Link>
           <LogOutButton className="navLink" />
-
         </List>
       </Typography>
     </div>
