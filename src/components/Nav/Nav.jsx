@@ -58,71 +58,71 @@ function Nav() {
   const list = () => (
     <div onClick={toggleDrawer(false)}>
       <Typography variant="h6">
-        
+
         <List>
 
           <Link to="/user">
-          <ListItem button>
-            <ListItemIcon>
-              <HomeIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Home"}/>
-          </ListItem>
+            <ListItem button>
+              <ListItemIcon>
+                <HomeIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Home"} />
+            </ListItem>
           </Link>
 
           <Link to="/add">
-          <ListItem button>
-                <ListItemIcon>
-                  <AddIcon />
-                </ListItemIcon>
-                <ListItemText primary={"Add Recommendation"} />
+            <ListItem button>
+              <ListItemIcon>
+                <AddIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Add Recommendation"} />
             </ListItem>
-            </Link>
-        
-        <Link to="/media">
-        <ListItem button>
-          <ListItemIcon>
-            <TheatersIcon />
-          </ListItemIcon>
-          <ListItemText primary={"Media"} />
-        </ListItem>
-        </Link>
+          </Link>
 
-        <Link to="/business">
-          <ListItem button>
-            <ListItemIcon>
+          <Link to="/media">
+            <ListItem button>
+              <ListItemIcon>
+                <TheatersIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Media"} />
+            </ListItem>
+          </Link>
+
+          <Link to="/business">
+            <ListItem button>
+              <ListItemIcon>
                 <BusinessIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Business"} />
-          </ListItem>
-        </Link>
-        
-        <Link to="/product">
-          <ListItem button>
-            <ListItemIcon>
+              </ListItemIcon>
+              <ListItemText primary={"Business"} />
+            </ListItem>
+          </Link>
+
+          <Link to="/product">
+            <ListItem button>
+              <ListItemIcon>
                 <WidgetsIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Product"} />
-          </ListItem>
-        </Link>
+              </ListItemIcon>
+              <ListItemText primary={"Product"} />
+            </ListItem>
+          </Link>
 
-        <Link to="/other">
-          <ListItem button>
-            <ListItemIcon>
-              <TerrainIcon />
-            </ListItemIcon>
+          <Link to="/other">
+            <ListItem button>
+              <ListItemIcon>
+                <TerrainIcon />
+              </ListItemIcon>
               <ListItemText primary={"Other"} />
-          </ListItem>
-        </Link>
+            </ListItem>
+          </Link>
 
-        <Link to="/favorite">
-          <ListItem button>
-            <ListItemIcon>
-              <FavoriteIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Favorites"} />
-          </ListItem>
-        </Link>
+          <Link to="/favorite">
+            <ListItem button>
+              <ListItemIcon>
+                <FavoriteIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Favorites"} />
+            </ListItem>
+          </Link>
 
         </List>
       </Typography>
@@ -146,40 +146,12 @@ function Nav() {
         {/* If a user is logged in, show these links */}
         {user.id && (
           <>
-          <MenuIcon />
-            <Link className="navLink" to="/user">
-              Home
-            </Link>
-
-            <Link className="navLink" to="/add">
-              Add a Recommendation
-            </Link>
-
-            <Link className="navLink" to="/favorite">
-              Favorites Page
-            </Link>
-
-            <Link className="navLink" to="/media">
-              Media
-            </Link>
-
-            <Link className="navLink" to="/business">
-              Business
-            </Link>
-
-            <Link className="navLink" to="/product">
-              Product
-            </Link>
-
-            <Link className="navLink" to="/other">
-              Other
-            </Link>
 
             <LogOutButton className="navLink" />
           </>
         )}
         <div className={classes.root}>
-          <Button onClick={toggleDrawer(true)}>Open From Left</Button>
+          <MenuIcon fontSize="large" button onClick={toggleDrawer(true)} />
           <Drawer
             className={classes.drawer}
             variant="temporary"
