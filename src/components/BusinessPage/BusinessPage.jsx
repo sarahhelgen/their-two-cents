@@ -10,6 +10,7 @@ import TableContainer from '@mui/material/TableContainer';
 import Button from '@mui/material/Button';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DeleteIcon from '@mui/icons-material/Delete';
+import Typography from '@mui/material/Typography';
 
 function BusinessPage() {
 
@@ -32,6 +33,11 @@ function BusinessPage() {
     return (
 
         <>
+
+            <Typography variant="h5" align="center">
+                Business Recommendations
+            </Typography>
+
             <TableContainer component={Paper}>
                 <Table>
                     <TableHead>
