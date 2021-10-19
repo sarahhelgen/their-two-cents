@@ -44,21 +44,21 @@ function ProductPage () {
                 <Table>
                     <TableHead>
                         <TableRow>
-                            <TableCell>Name</TableCell>
-                            <TableCell>Type</TableCell>
-                            <TableCell>Notes</TableCell>
-                            <TableCell>Favorite</TableCell>
-                            <TableCell>Delete</TableCell>
+                            <TableCell align="left">Name</TableCell>
+                            <TableCell align="left">Type</TableCell>
+                            <TableCell align="left">Notes</TableCell>
+                            <TableCell align="left">Favorite</TableCell>
+                            <TableCell align="left">Delete</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                     {products.map((product) =>
                         <TableRow key={product.id}>
-                            <TableCell>{product.name}</TableCell>
-                            <TableCell>{product.type}</TableCell>
-                            <TableCell>{product.notes}</TableCell>
-                            <TableCell><Button variant="text" onClick={(event) => favoriteProduct(product.rec_id)}><FavoriteIcon /></Button></TableCell>
-                            <TableCell><Button variant="text" onClick={(event) => deleteProduct(product.rec_id)}><DeleteIcon /></Button></TableCell>
+                            <TableCell align="left">{product.name}</TableCell>
+                            <TableCell align="left">{product.type}</TableCell>
+                            <TableCell align="left">{product.notes}</TableCell>
+                            <TableCell align="left"><Button variant="text" onClick={(event) => favoriteProduct(product.rec_id)}><FavoriteIcon /></Button></TableCell>
+                            <TableCell align="left"><Button variant="text" onClick={(event) => deleteProduct(product.rec_id)}><DeleteIcon /></Button></TableCell>
                         </TableRow>
                     )}
                     </TableBody>

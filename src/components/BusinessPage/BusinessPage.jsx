@@ -42,21 +42,21 @@ function BusinessPage() {
                 <Table>
                     <TableHead>
                         <TableRow>
-                            <TableCell>Name</TableCell>
-                            <TableCell>Type</TableCell>
-                            <TableCell>Notes</TableCell>
-                            <TableCell>Favorite</TableCell>
-                            <TableCell>Delete</TableCell>
+                            <TableCell align="left">Name</TableCell>
+                            <TableCell align="left">Type</TableCell>
+                            <TableCell align="left">Notes</TableCell>
+                            <TableCell align="left">Favorite</TableCell>
+                            <TableCell align="left">Delete</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {business.map(business =>
                             <TableRow key={business.id}>
-                                <TableCell key={business.id}>{business.name}</TableCell>
-                                <TableCell>{business.type}</TableCell>
-                                <TableCell>{business.notes}</TableCell>
-                                <TableCell><Button variant="text" onClick={(event) => favoriteBusiness(business.rec_id)}><FavoriteIcon /></Button></TableCell>
-                                <TableCell><Button variant="text" onClick={(event) => deleteBusiness(business.rec_id)}><DeleteIcon /></Button></TableCell>
+                                <TableCell align="left">{business.name}</TableCell>
+                                <TableCell align="left">{business.type}</TableCell>
+                                <TableCell align="left">{business.notes}</TableCell>
+                                <TableCell align="left"><Button variant="text" onClick={(event) => favoriteBusiness(business.rec_id)}><FavoriteIcon /></Button></TableCell>
+                                <TableCell align="left"><Button variant="text" onClick={(event) => deleteBusiness(business.rec_id)}><DeleteIcon /></Button></TableCell>
                             </TableRow>
                         )}
                     </TableBody>

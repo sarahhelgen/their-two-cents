@@ -27,6 +27,9 @@ function OtherPage() {
             backgroundColor: '#f4f1de',
             
         },
+        table: {
+            minWidth: 650,
+        }
     })
 
     const classes = useStyles();
@@ -49,24 +52,24 @@ function OtherPage() {
             </Typography>
 
             <TableContainer component={Paper} variant= "outlined" elevation={8} className={classes.paperColor}>
-                <Table>
+                <Table className={classes.table} aria-label="simple table">
                     <TableHead>
                         <TableRow>
-                            <TableCell>Name</TableCell>
-                            <TableCell>Type</TableCell>
-                            <TableCell>Notes</TableCell>
-                            <TableCell>Favorite</TableCell>
-                            <TableCell>Delete</TableCell>
+                            <TableCell align="left">Name</TableCell>
+                            <TableCell align="left">Type</TableCell>
+                            <TableCell align="left">Notes</TableCell>
+                            <TableCell align="left">Favorite</TableCell>
+                            <TableCell align="left">Delete</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {other.map((other) =>
                             <TableRow key={other.id}>
-                                <TableCell>{other.name}</TableCell>
-                                <TableCell>{other.type}</TableCell>
-                                <TableCell>{other.notes}</TableCell>
-                                <TableCell><Button variant="text" onClick={(event) => favoriteOther(other.rec_id)}><FavoriteIcon /></Button></TableCell>
-                                <TableCell><Button variant="text" onClick={(event) => deleteOther(other.rec_id)}><DeleteIcon /></Button></TableCell>
+                                <TableCell align="left">{other.name}</TableCell>
+                                <TableCell align="left">{other.type}</TableCell>
+                                <TableCell align="left">{other.notes}</TableCell>
+                                <TableCell align="left"><Button variant="text" onClick={(event) => favoriteOther(other.rec_id)}><FavoriteIcon /></Button></TableCell>
+                                <TableCell align="left"><Button variant="text" onClick={(event) => deleteOther(other.rec_id)}><DeleteIcon /></Button></TableCell>
                             </TableRow>
                         )}
                     </TableBody>

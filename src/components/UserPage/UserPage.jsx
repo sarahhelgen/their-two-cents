@@ -61,35 +61,35 @@ function UserPage() {
       {JSON.stringify(otherCount)} */}
 
 
-      <TableContainer>
+      <TableContainer component={Paper}>
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Category</TableCell>
-            <TableCell>Count</TableCell>
-            <TableCell>Details</TableCell>
+            <TableCell align="left">Category</TableCell>
+            <TableCell align="left">Count</TableCell>
+            <TableCell align="left">Details</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           <TableRow>
-            <TableCell>Media</TableCell>
-            {/* <TableCell>{mediaCount[0].count}</TableCell> */}
-            <TableCell><Button variant="contained" onClick={goToMedia} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
+            <TableCell align="left">Media</TableCell>
+            {/* <TableCell align="left">{mediaCount[0].count}</TableCell> */}
+            <TableCell align="left"><Button variant="contained" onClick={goToMedia} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>Products</TableCell>
-            {/* <TableCell>{productCount[0].count}</TableCell> */}
-            <TableCell><Button variant="contained" onClick={goToProducts} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
+            <TableCell align="left">Products</TableCell>
+            {/* <TableCell align="left">{productCount[0].count}</TableCell> */}
+            <TableCell align="left"><Button variant="contained" onClick={goToProducts} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>Businesses</TableCell>
+            <TableCell align="left">Businesses</TableCell>
             {/* <TableCell>{businessCount[0].count}</TableCell> */}
             <TableCell><Button variant="contained" onClick={goToBusiness} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>Other</TableCell>
+            <TableCell align="left">Other</TableCell>
             {/* <TableCell>{otherCount[0].count}</TableCell> */}
-            <TableCell><Button variant ="contained" onClick ={goToOther} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
+            <TableCell align="left"><Button variant ="contained" onClick ={goToOther} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
           </TableRow>
         </TableBody>
       </Table>

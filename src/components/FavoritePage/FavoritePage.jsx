@@ -39,19 +39,19 @@ function FavoritePage() {
                     <Table>
                         <TableHead>
                             <TableRow>
-                                <TableCell>Name</TableCell>
-                                <TableCell>Type</TableCell>
-                                <TableCell>Notes</TableCell>
-                                <TableCell>Delete</TableCell>
+                                <TableCell align="left">Name</TableCell>
+                                <TableCell align="left">Type</TableCell>
+                                <TableCell align="left">Notes</TableCell>
+                                <TableCell align="left">Delete</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
                         {favorites.map((favorite) =>
                             <TableRow key={favorite.id}>
-                                <TableCell>{favorite.name}</TableCell>
-                                <TableCell>{favorite.type}</TableCell>
-                                <TableCell>{favorite.notes}</TableCell>
-                                <TableCell><Button variant="text" onClick={(event) => deleteFavorite(favorite.rec_id)}><DeleteIcon /></Button></TableCell>
+                                <TableCell align="left">{favorite.name}</TableCell>
+                                <TableCell align="left">{favorite.type}</TableCell>
+                                <TableCell align="left">{favorite.notes}</TableCell>
+                                <TableCell align="left"><Button variant="text" onClick={(event) => deleteFavorite(favorite.rec_id)}><DeleteIcon /></Button></TableCell>
                             </TableRow>
                             )}
                         </TableBody>
