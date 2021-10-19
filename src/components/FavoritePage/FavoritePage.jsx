@@ -9,6 +9,8 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
+import Typography from '@mui/material/Typography';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 function FavoritePage() {
 
@@ -28,31 +30,33 @@ function FavoritePage() {
     return (
 
         <>
-            <h2>Favorites Page</h2>
-            {/* {JSON.stringify(favorites)} */}
 
-            {favorites.map((favorite) =>
+            <Typography variant="h5" align="center">
+                Favorites! <FavoriteIcon />
+            </Typography>
+
                 <TableContainer component={Paper}>
-                <Table key={favorite.id}>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Name</TableCell>
-                            <TableCell>Type</TableCell>
-                            <TableCell>Notes</TableCell>
-                            <TableCell>Delete</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        <TableRow>
-                            <TableCell>{favorite.name}</TableCell>
-                            <TableCell>{favorite.type}</TableCell>
-                            <TableCell>{favorite.notes}</TableCell>
-                            <TableCell><Button variant="text" onClick={(event) => deleteFavorite(favorite.rec_id)}><DeleteIcon /></Button></TableCell>
-                        </TableRow>
-                    </TableBody>
-                </Table>
+                    <Table>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Name</TableCell>
+                                <TableCell>Type</TableCell>
+                                <TableCell>Notes</TableCell>
+                                <TableCell>Delete</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                        {favorites.map((favorite) =>
+                            <TableRow key={favorite.id}>
+                                <TableCell>{favorite.name}</TableCell>
+                                <TableCell>{favorite.type}</TableCell>
+                                <TableCell>{favorite.notes}</TableCell>
+                                <TableCell><Button variant="text" onClick={(event) => deleteFavorite(favorite.rec_id)}><DeleteIcon /></Button></TableCell>
+                            </TableRow>
+                            )}
+                        </TableBody>
+                    </Table>
                 </TableContainer>
-            )}
         </>
     )
 }

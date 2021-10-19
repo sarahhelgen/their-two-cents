@@ -10,6 +10,7 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DeleteIcon from '@mui/icons-material/Delete';
+import Typography from '@mui/material/Typography';
 
 
 function ProductPage () {
@@ -35,11 +36,12 @@ function ProductPage () {
 
 
         <>
-            <h2>Products Page</h2>
+        <Typography variant="h5" align="center">
+                Product Recommendations
+            </Typography>
         
-        {products.map((product) =>
             <TableContainer component={Paper}>
-                <Table key={product.id}>
+                <Table>
                     <TableHead>
                         <TableRow>
                             <TableCell>Name</TableCell>
@@ -50,19 +52,22 @@ function ProductPage () {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        <TableRow>
+                    {products.map((product) =>
+                        <TableRow key={product.id}>
                             <TableCell>{product.name}</TableCell>
                             <TableCell>{product.type}</TableCell>
                             <TableCell>{product.notes}</TableCell>
                             <TableCell><Button variant="text" onClick={(event) => favoriteProduct(product.rec_id)}><FavoriteIcon /></Button></TableCell>
                             <TableCell><Button variant="text" onClick={(event) => deleteProduct(product.rec_id)}><DeleteIcon /></Button></TableCell>
                         </TableRow>
+                    )}
                     </TableBody>
                 </Table>
                 </TableContainer>
-            )}
-        </>
-    )
+                </>
+            )
+        
+    
 }
 
 export default ProductPage;

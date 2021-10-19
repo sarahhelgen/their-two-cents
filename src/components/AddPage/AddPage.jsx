@@ -12,7 +12,8 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
 import FormControl from '@mui/material/FormControl';
-import {makeStyles} from '@mui/styles';
+import { makeStyles } from '@mui/styles';
+import Typography from '@mui/material/Typography';
 
 function AddPage() {
 
@@ -22,9 +23,9 @@ function AddPage() {
     const [type, setType] = useState('');
     const [notes, setNotes] = useState('');
     const [category, setCategory] = useState(1);
-    const [nameError, setNameError ] = useState(false);
-    const [typeError, setTypeError ] = useState(false);
-    const [notesError, setNotesError ] = useState(false);
+    const [nameError, setNameError] = useState(false);
+    const [typeError, setTypeError] = useState(false);
+    const [notesError, setNotesError] = useState(false);
 
     const useStyles = makeStyles({
         field: {
@@ -68,23 +69,30 @@ function AddPage() {
 
     return (
 
-        <Container component={Paper}>
-        <form noValidate autoComplete="off" onSubmit={addNewRecommendation}>
-            <TextField className={classes.field} fullWidth error={nameError} id="outlined-basic" label="Name" variant="outlined" type="text" required value={name} onChange={(event) => setName(event.target.value)} />
-            <TextField className={classes.field} fullWidth error={typeError} id="outlined-basic" label="Type" variant="outlined" type="text" required value={type} onChange={(event) => setType(event.target.value)} />
-            <TextField className={classes.field} fullWidth error={notesError} multiline rows={4} id="outlined-basic" label="Notes" variant="outlined"type="text" required value={notes} onChange={(event) => setNotes(event.target.value)} />
-                <FormControl className={classes.field}>
-                <FormLabel>Choose a category: </FormLabel>
-                <RadioGroup value={category} onChange={(event) => setCategory(event.target.value)}>
-                    <FormControlLabel value={1} control={<Radio />} label="Media"/>
-                    <FormControlLabel value={2} control={<Radio />} label="Business"/>
-                    <FormControlLabel value={3} control={<Radio />} label="Product"/>
-                    <FormControlLabel value={4} control={<Radio />} label="Other"/>
-                </RadioGroup>
-                </FormControl>
-            <Button variant="contained" type="submit" endIcon={<KeyboardArrowRightIcon />}>Submit</Button>
-        </form>
-        </Container>
+        <div>
+            <Typography variant="h5" align="center">
+                Add Your Recommendation!
+            </Typography>
+
+            <Container component={Paper}>
+                <form noValidate autoComplete="off" onSubmit={addNewRecommendation}>
+                    <TextField className={classes.field} fullWidth error={nameError} id="outlined-basic" label="Name" variant="outlined" type="text" required value={name} onChange={(event) => setName(event.target.value)} />
+                    <TextField className={classes.field} fullWidth error={typeError} id="outlined-basic" label="Type" variant="outlined" type="text" required value={type} onChange={(event) => setType(event.target.value)} />
+                    <TextField className={classes.field} fullWidth error={notesError} multiline rows={4} id="outlined-basic" label="Notes" variant="outlined" type="text" required value={notes} onChange={(event) => setNotes(event.target.value)} />
+                    <FormControl className={classes.field}>
+                        <FormLabel>Choose a category: </FormLabel>
+                        <RadioGroup value={category} onChange={(event) => setCategory(event.target.value)}>
+                            <FormControlLabel value={1} control={<Radio />} label="Media" />
+                            <FormControlLabel value={2} control={<Radio />} label="Business" />
+                            <FormControlLabel value={3} control={<Radio />} label="Product" />
+                            <FormControlLabel value={4} control={<Radio />} label="Other" />
+                        </RadioGroup>
+                    </FormControl>
+                    <Button variant="contained" type="submit" endIcon={<KeyboardArrowRightIcon />}>Submit</Button>
+                </form>
+            </Container>
+
+        </div>
     )
 
 }
