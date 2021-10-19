@@ -55,10 +55,10 @@ function UserPage() {
   return (
     <div>
 
-      {JSON.stringify(mediaCount)}
+      {/* {JSON.stringify(mediaCount)}
       {JSON.stringify(productCount)}
       {JSON.stringify(businessCount)}
-      {JSON.stringify(otherCount)}
+      {JSON.stringify(otherCount)} */}
 
 
       <TableContainer>
@@ -73,22 +73,22 @@ function UserPage() {
         <TableBody>
           <TableRow>
             <TableCell>Media</TableCell>
-            {/* <TableCell>{mediaCount[0].count}</TableCell> */}
+            <TableCell>{mediaCount[0].count}</TableCell>
             <TableCell><Button variant="text" onClick={goToMedia}>Details</Button></TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Products</TableCell>
-            {/* <TableCell>{productCount[0].count}</TableCell> */}
+            <TableCell>{productCount[0].count}</TableCell>
             <TableCell><Button variant="text" onClick={goToProducts}>Details</Button></TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Businesses</TableCell>
-            {/* <TableCell>{businessCount[0].count}</TableCell> */}
+            <TableCell>{businessCount[0].count}</TableCell>
             <TableCell><Button variant="text" onClick={goToBusiness}>Details</Button></TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Other</TableCell>
-            {/* <TableCell>{otherCount[0].count}</TableCell> */}
+            <TableCell>{otherCount[0].count}</TableCell>
             <TableCell><Button variant ="text" onClick ={goToOther}>Details</Button></TableCell>
           </TableRow>
         </TableBody>
