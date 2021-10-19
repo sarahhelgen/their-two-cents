@@ -1,9 +1,10 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
+const { rejectUnauthenticated } = require('../modules/authentication-middleware')
 
 
-router.get('/', (req, res) => {
+router.get('/', rejectUnauthenticated, (req, res) => {
     const queryText = `SELECT "recommendation".*, "recommendation"."id" as "rec_id" FROM "recommendation"
     JOIN "category" ON "category"."id" = "recommendation"."category_id"
     WHERE "category"."id" = '1';`
@@ -17,7 +18,7 @@ router.get('/', (req, res) => {
 });
 
 
-router.delete('/:id', (req,res) => {
+router.delete('/:id', rejectUnauthenticated, (req,res) => {
     console.log('req.params is', req.params );
     const mediaId = req.params.id;
     const queryText = `DELETE FROM "recommendation" WHERE id = $1`;
@@ -29,7 +30,7 @@ router.delete('/:id', (req,res) => {
     })
 })
 
-router.put('/:id', (req,res) => {
+router.put('/:id',rejectUnauthenticated, (req,res) => {
     console.log('req.params is', req.params );
     const mediaId = req.params.id;
     let queryText = `UPDATE "recommendation" SET "favorite" = 'true' WHERE id = $1;`;

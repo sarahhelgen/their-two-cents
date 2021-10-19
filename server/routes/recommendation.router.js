@@ -1,9 +1,10 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
+const { rejectUnauthenticated } = require('../modules/authentication-middleware')
 
 //GET route to retrieve media recommendation count
-router.get('/media', (req, res) => {
+router.get('/media', rejectUnauthenticated, (req, res) => {
   const queryText = `SELECT count(*) FROM "recommendation"
   JOIN "category" ON "category"."id" = "recommendation"."category_id"
   WHERE "category"."id" = '1';`;
@@ -18,7 +19,7 @@ router.get('/media', (req, res) => {
 });
 
 //get route to retrieve product recommendation count
-router.get('/product', (req, res) => {
+router.get('/product', rejectUnauthenticated, (req, res) => {
   const queryText = `SELECT count(*) FROM "recommendation"
   JOIN "category" ON "category"."id" = "recommendation"."category_id"
   WHERE "category"."id" = '3';`;
@@ -33,7 +34,7 @@ router.get('/product', (req, res) => {
 });
 
 //get route to fetch business recommendation count
-router.get('/business', (req, res) => {
+router.get('/business', rejectUnauthenticated, (req, res) => {
   const queryText = `SELECT count(*) FROM "recommendation"
   JOIN "category" ON "category"."id" = "recommendation"."category_id"
   WHERE "category"."id" = '2';`;
@@ -48,7 +49,7 @@ router.get('/business', (req, res) => {
 });
 
 //get route to fetch other recommendation count
-router.get('/other', (req, res) => {
+router.get('/other',rejectUnauthenticated, (req, res) => {
   const queryText = `SELECT count(*) FROM "recommendation"
   JOIN "category" ON "category"."id" = "recommendation"."category_id"
   WHERE "category"."id" = '4';`;
@@ -63,7 +64,7 @@ router.get('/other', (req, res) => {
 });
 
 //POST route to send new user recommendation and category to the db from add a recommendation page
-router.post('/', (req, res) => {
+router.post('/', rejectUnauthenticated, (req, res) => {
   const newRecommendation = req.body;
   console.log('The new rec is', newRecommendation);
   const insertRecQuery = `INSERT INTO "recommendation" ("name", "type", "notes", "category_id") VALUES ($1, $2, $3, $4 ) RETURNING "id";`;
