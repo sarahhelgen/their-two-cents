@@ -49,6 +49,11 @@ function Nav() {
     },
     root: {
       display: 'flex',
+    },
+    link: {
+      textDecoration: 'none',
+      color: 'black',
+
     }
 
   })
@@ -61,7 +66,7 @@ function Nav() {
 
         <List>
 
-          <Link to="/user">
+          <Link to="/user" className={classes.link}>
             <ListItem button>
               <ListItemIcon>
                 <HomeIcon />
@@ -70,7 +75,7 @@ function Nav() {
             </ListItem>
           </Link>
 
-          <Link to="/add">
+          <Link to="/add" className={classes.link} >
             <ListItem button>
               <ListItemIcon>
                 <AddIcon />
@@ -79,7 +84,7 @@ function Nav() {
             </ListItem>
           </Link>
 
-          <Link to="/media">
+          <Link to="/media" className={classes.link}>
             <ListItem button>
               <ListItemIcon>
                 <TheatersIcon />
@@ -88,7 +93,7 @@ function Nav() {
             </ListItem>
           </Link>
 
-          <Link to="/business">
+          <Link to="/business"className={classes.link}>
             <ListItem button>
               <ListItemIcon>
                 <BusinessIcon />
@@ -97,7 +102,7 @@ function Nav() {
             </ListItem>
           </Link>
 
-          <Link to="/product">
+          <Link to="/product" className={classes.link}>
             <ListItem button>
               <ListItemIcon>
                 <WidgetsIcon />
@@ -106,7 +111,7 @@ function Nav() {
             </ListItem>
           </Link>
 
-          <Link to="/other">
+          <Link to="/other" className={classes.link}>
             <ListItem button>
               <ListItemIcon>
                 <TerrainIcon />
@@ -115,7 +120,7 @@ function Nav() {
             </ListItem>
           </Link>
 
-          <Link to="/favorite">
+          <Link to="/favorite" className={classes.link}>
             <ListItem button>
               <ListItemIcon>
                 <FavoriteIcon />

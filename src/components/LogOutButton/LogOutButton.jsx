@@ -1,9 +1,12 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 function LogOutButton(props) {
   const dispatch = useDispatch();
   return (
+    <>
+    <LogoutIcon />
     <button
       // This button shows up in multiple locations and is styled differently
       // because it's styled differently depending on where it is used, the className
@@ -13,6 +16,8 @@ function LogOutButton(props) {
     >
       Log Out
     </button>
+
+    </>
   );
 }
 
