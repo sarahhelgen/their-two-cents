@@ -32,7 +32,6 @@ function BusinessPage() {
     return (
 
         <>
-            <h2>Business Recommendation Page</h2>
             <TableContainer component={Paper}>
                 <Table>
                     <TableHead>
@@ -45,19 +44,15 @@ function BusinessPage() {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        <TableRow>
-                            {business.map(business => {
-                                <>
-                                    <TableCell  key={business.id}>{business.name}</TableCell>
-                                    <TableCell>{business.type}</TableCell>
-                                    <TableCell>{business.notes}</TableCell>
-                                    <TableCell><Button variant="text" onClick={(event) => favoriteBusiness(business.rec_id)}><FavoriteIcon /></Button></TableCell>
-                                    <TableCell><Button variant="text" onClick={(event) => deleteBusiness(business.rec_id)}><DeleteIcon /></Button></TableCell>
-                                </>
-                            })
-                            }
-
-                        </TableRow>
+                        {business.map(business =>
+                            <TableRow key={business.id}>
+                                <TableCell key={business.id}>{business.name}</TableCell>
+                                <TableCell>{business.type}</TableCell>
+                                <TableCell>{business.notes}</TableCell>
+                                <TableCell><Button variant="text" onClick={(event) => favoriteBusiness(business.rec_id)}><FavoriteIcon /></Button></TableCell>
+                                <TableCell><Button variant="text" onClick={(event) => deleteBusiness(business.rec_id)}><DeleteIcon /></Button></TableCell>
+                            </TableRow>
+                        )}
                     </TableBody>
                 </Table>
             </TableContainer>
