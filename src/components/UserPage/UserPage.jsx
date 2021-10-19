@@ -11,26 +11,27 @@ import TableCell from '@mui/material/TableCell';
 import TableBody from '@mui/material/TableBody';
 import Button from '@mui/material/Button';
 
+
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector(store => store.user);
   const dispatch = useDispatch();
   const history = useHistory();
   const mediaCount = useSelector(store => store.recommendations.media);
-  const productCount = useSelector( store => store.recommendations.product );
-  const businessCount = useSelector( store => store.recommendations.business );
-  const otherCount = useSelector( store => store.recommendations.other);
+  const productCount = useSelector(store => store.recommendations.product);
+  const businessCount = useSelector(store => store.recommendations.business);
+  const otherCount = useSelector(store => store.recommendations.other);
 
   useEffect(() => {
     dispatch({ type: 'FETCH_MEDIA_COUNT' });
-    dispatch({ type: 'FETCH_PRODUCT_COUNT'});
-    dispatch({ type: 'FETCH_BUSINESS_COUNT'});
-    dispatch({ type: 'FETCH_OTHER_COUNT'});
+    dispatch({ type: 'FETCH_PRODUCT_COUNT' });
+    dispatch({ type: 'FETCH_BUSINESS_COUNT' });
+    dispatch({ type: 'FETCH_OTHER_COUNT' });
   }, []);
 
-  
 
-  const goToMedia = () =>{
+
+  const goToMedia = () => {
     history.push('/media');
   }
 
@@ -46,6 +47,9 @@ function UserPage() {
     history.push('/other');
   }
 
+  
+
+  
 
   return (
     <div>
@@ -88,8 +92,16 @@ function UserPage() {
         </TableBody>
       </Table>
       </TableContainer>
+
+     
+
       </div>
-    
+
+
+       
+
+
+
 
 
   );
