@@ -123,6 +123,7 @@ function Nav() {
               <ListItemText primary={"Favorites"} />
             </ListItem>
           </Link>
+          <LogOutButton className="navLink" />
 
         </List>
       </Typography>
@@ -131,9 +132,7 @@ function Nav() {
 
   return (
     <div className="nav">
-      <Link to="/home">
         <h2 className="nav-title">Their Two Cents</h2>
-      </Link>
       <div>
         {/* If no user is logged in, show these links */}
         {user.id === null &&
@@ -147,15 +146,14 @@ function Nav() {
         {user.id && (
           <>
 
-            <LogOutButton className="navLink" />
           </>
         )}
         <div className={classes.root}>
-          <MenuIcon fontSize="large" button onClick={toggleDrawer(true)} />
+          <MenuIcon className="nav-title" fontSize="large" button onClick={toggleDrawer(true)} />
           <Drawer
             className={classes.drawer}
             variant="temporary"
-            anchor={'left'}
+            anchor={'right'}
             classes={{ paper: classes.drawerPaper }}
             open={drawerState}
             onClose={toggleDrawer(false)}
