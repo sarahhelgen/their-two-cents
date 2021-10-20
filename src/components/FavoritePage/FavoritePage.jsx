@@ -11,11 +11,21 @@ import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { makeStyles } from '@mui/styles';
 
 function FavoritePage() {
 
     const dispatch = useDispatch();
     const favorites = useSelector(store => store.recommendations.favorite);
+
+    const useStyles = makeStyles({
+        deleteButton: {
+            color: '#81b29a'
+        }
+        
+})
+
+const classes = useStyles();
 
     useEffect(() => {
         dispatch({ type: 'FETCH_FAVORITES' });
@@ -31,7 +41,7 @@ function FavoritePage() {
 
         <>
 
-            <Typography variant="h5" align="center">
+            <Typography variant="h5" align="left">
                 Favorites! <FavoriteIcon />
             </Typography>
 
@@ -51,7 +61,7 @@ function FavoritePage() {
                                 <TableCell align="left">{favorite.name}</TableCell>
                                 <TableCell align="left">{favorite.type}</TableCell>
                                 <TableCell align="left">{favorite.notes}</TableCell>
-                                <TableCell align="left"><Button variant="text" onClick={(event) => deleteFavorite(favorite.rec_id)}><DeleteIcon /></Button></TableCell>
+                                <TableCell align="left"><Button variant="text" onClick={(event) => deleteFavorite(favorite.rec_id)}><DeleteIcon className={classes.deleteButton}/></Button></TableCell>
                             </TableRow>
                             )}
                         </TableBody>

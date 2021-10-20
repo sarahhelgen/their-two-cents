@@ -11,11 +11,23 @@ import Button from '@mui/material/Button';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Typography from '@mui/material/Typography';
+import { makeStyles } from '@mui/styles';
 
 function MediaPage() {
 
     const dispatch = useDispatch();
     const media = useSelector(store => store.recommendations.media);
+
+    const useStyles = makeStyles({
+        likeButton: {
+            color: '#e07a5f'
+        },
+        deleteButton: {
+            color: '#81b29a'
+        },
+    })
+
+    const classes = useStyles();
 
     useEffect(() => {
         dispatch({ type: 'FETCH_MEDIA' });
@@ -35,7 +47,7 @@ function MediaPage() {
 
         <div>
 
-            <Typography variant="h5" align="center">
+            <Typography variant="h5" align="left">
                 Media Recommendations
             </Typography>
 
@@ -57,8 +69,8 @@ function MediaPage() {
                                 <TableCell align="left">{media.name}</TableCell>
                                 <TableCell align="left">{media.type}</TableCell>
                                 <TableCell align="left">{media.notes}</TableCell>
-                                <TableCell align="left"><Button variant="text" onClick={(event) => favoriteMedia(media.rec_id)}><FavoriteIcon /></Button></TableCell>
-                                <TableCell align="left"><Button variant="text" onClick={(event) => deleteMedia(media.rec_id)}><DeleteIcon /></Button></TableCell>
+                                <TableCell align="left"><Button variant="text" onClick={(event) => favoriteMedia(media.rec_id)}><FavoriteIcon className={classes.likeButton}/></Button></TableCell>
+                                <TableCell align="left"><Button variant="text" onClick={(event) => deleteMedia(media.rec_id)}><DeleteIcon className={classes.deleteButton}/></Button></TableCell>
                             </TableRow>
                         )}
                     </TableBody>

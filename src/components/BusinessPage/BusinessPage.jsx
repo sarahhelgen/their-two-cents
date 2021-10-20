@@ -11,11 +11,24 @@ import Button from '@mui/material/Button';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Typography from '@mui/material/Typography';
+import { makeStyles } from '@mui/styles';
+
 
 function BusinessPage() {
 
     const dispatch = useDispatch();
     const business = useSelector(store => store.recommendations.business)
+
+    const useStyles = makeStyles({
+        likeButton :{
+            color: '#e07a5f'
+        },
+        deleteButton: {
+            color: '#81b29a'
+        },
+})
+
+const classes = useStyles();
 
 
     useEffect(() => {
@@ -34,7 +47,7 @@ function BusinessPage() {
 
         <>
 
-            <Typography variant="h5" align="center">
+            <Typography variant="h5" align="left">
                 Business Recommendations
             </Typography>
 
@@ -50,13 +63,13 @@ function BusinessPage() {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {business.map(business =>
+                        {business.map((business) =>
                             <TableRow key={business.id}>
                                 <TableCell align="left">{business.name}</TableCell>
                                 <TableCell align="left">{business.type}</TableCell>
                                 <TableCell align="left">{business.notes}</TableCell>
-                                <TableCell align="left"><Button variant="text" onClick={(event) => favoriteBusiness(business.rec_id)}><FavoriteIcon /></Button></TableCell>
-                                <TableCell align="left"><Button variant="text" onClick={(event) => deleteBusiness(business.rec_id)}><DeleteIcon /></Button></TableCell>
+                                <TableCell align="left"><Button variant="text" onClick={(event) => favoriteBusiness(business.rec_id)}><FavoriteIcon className={classes.likeButton}/></Button></TableCell>
+                                <TableCell align="left"><Button variant="text" onClick={(event) => deleteBusiness(business.rec_id)}><DeleteIcon className={classes.deleteButton}/></Button></TableCell>
                             </TableRow>
                         )}
                     </TableBody>

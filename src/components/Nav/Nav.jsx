@@ -19,6 +19,7 @@ import BusinessIcon from '@mui/icons-material/Business';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import TerrainIcon from '@mui/icons-material/Terrain';
 import WidgetsIcon from '@mui/icons-material/Widgets';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 
@@ -115,6 +116,12 @@ function Nav() {
               </ListItemIcon>
               <ListItemText primary={"Favorites"} />
             </ListItem>
+          </Link>
+          <Link>
+          <ListItem button>
+    
+          </ListItem>
+
           </Link>
           <LogOutButton className="navLink" />
         </List>
