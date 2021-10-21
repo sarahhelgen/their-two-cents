@@ -53,6 +53,7 @@ function MediaPage() {
             </Typography>
             </Box>
 
+            <Box p={2}>
             <TableContainer component={Paper}>
                 <Table size="small">
                     <TableHead>
@@ -78,6 +79,7 @@ function MediaPage() {
                     </TableBody>
                 </Table>
             </TableContainer>
+            </Box>
 
         </div>
 

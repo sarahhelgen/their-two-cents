@@ -78,13 +78,18 @@ function UserPage() {
       {JSON.stringify(businessCount)}
       {JSON.stringify(otherCount)} */}
 
-      <Box p={2}>
-      <Typography variant="h5" align="left">
-        Welcome to Their Two Cents! Here are your current recommendations:
+      <Box p={1}>
+      <Typography variant="h4" align="left">
+        Welcome to Their Two Cents!
       </Typography>
       </Box>
+      <Box p={1}>
+        <Typography variant="h5" >
+        Here are your current recommendations:
+        </Typography>
+        </Box>
 
-
+      <Box p={2}>
       <TableContainer component={Paper}>
         <Table size="small">
           <TableHead>
@@ -118,6 +123,7 @@ function UserPage() {
           </TableBody>
         </Table>
       </TableContainer>
+      </Box>
 
       <Box sx={{p:2, display: 'flex', justifyContent: 'flex-end'}}>
       <Button variant="contained" style={{backgroundColor: '#e07a5f'}} size="large" onClick={goToAddPage}>ADD RECOMMENDATION </Button>

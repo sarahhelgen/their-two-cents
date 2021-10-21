@@ -56,6 +56,7 @@ function OtherPage() {
             </Typography>
             </Box>
 
+            <Box p={2}>
             <TableContainer component={Paper} variant="outlined" elevation={8}>
                 <Table className={classes.table} size={"small"}>
                     <TableHead>
@@ -78,11 +79,9 @@ function OtherPage() {
                             </TableRow>
                         )}
                     </TableBody>
-                </Table>
-
-                
-
+                </Table>  
             </TableContainer>
+            </Box>
 
 
         </div>

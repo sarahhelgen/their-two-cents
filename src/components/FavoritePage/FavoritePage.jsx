@@ -48,6 +48,8 @@ const classes = useStyles();
                 Favorites! <FavoriteIcon />
             </Typography>
             </Box>
+
+                <Box p={2}>
                 <TableContainer component={Paper}>
                     <Table size="small">
                         <TableHead>
@@ -70,6 +72,7 @@ const classes = useStyles();
                         </TableBody>
                     </Table>
                 </TableContainer>
+                </Box>
         </>
     )
 }

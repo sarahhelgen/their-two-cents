@@ -53,6 +53,7 @@ function ProductPage() {
             </Typography>
             </Box>
 
+            <Box p={2}>
             <TableContainer component={Paper}>
                 <Table size="small">
                     <TableHead>
@@ -77,6 +78,7 @@ function ProductPage() {
                     </TableBody>
                 </Table>
             </TableContainer>
+            </Box>
         </>
     )
 
