@@ -129,7 +129,6 @@ function Nav() {
 
           </Link>
           
-          <LogOutButton />
         </List>
       </Typography>
     </div>
