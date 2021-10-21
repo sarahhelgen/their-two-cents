@@ -11,6 +11,8 @@ import TableCell from '@mui/material/TableCell';
 import TableBody from '@mui/material/TableBody';
 import Button from '@mui/material/Button';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import Typography from '@mui/material/Typography';
+import { makeStyles } from '@mui/styles';
 
 
 function UserPage() {
@@ -30,6 +32,17 @@ function UserPage() {
     dispatch({ type: 'FETCH_OTHER_COUNT' });
   }, []);
 
+  const useStyles = makeStyles({
+    addButton: {
+      color: '#e07a5f',
+    },
+    detailsButton: {
+      color: '#81b29a',
+    },
+  })
+
+  const classes = useStyles();
+
 
 
   const goToMedia = () => {
@@ -48,9 +61,13 @@ function UserPage() {
     history.push('/other');
   }
 
-  
+  const goToAddPage = () => {
+    history.push('/add');
+  }
 
-  
+
+
+
 
   return (
     <div>
@@ -60,47 +77,53 @@ function UserPage() {
       {JSON.stringify(businessCount)}
       {JSON.stringify(otherCount)} */}
 
+      <Typography variant="h5" align="left">
+        Welcome to Their Two Cents! Here are your current recommendations:
+      </Typography>
+
 
       <TableContainer component={Paper}>
-      <Table size="small">
-        <TableHead>
-          <TableRow>
-            <TableCell align="left">Category</TableCell>
-            <TableCell align="left">Count</TableCell>
-            <TableCell align="left">Details</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          <TableRow>
-            <TableCell align="left">Media</TableCell>
-            {/* <TableCell align="left">{mediaCount[0].count}</TableCell> */}
-            <TableCell align="left"><Button variant="contained" onClick={goToMedia} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell align="left">Products</TableCell>
-            {/* <TableCell align="left">{productCount[0].count}</TableCell> */}
-            <TableCell align="left"><Button variant="contained" onClick={goToProducts} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell align="left">Businesses</TableCell>
-            {/* <TableCell>{businessCount[0].count}</TableCell> */}
-            <TableCell><Button variant="contained" onClick={goToBusiness} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell align="left">Other</TableCell>
-            {/* <TableCell>{otherCount[0].count}</TableCell> */}
-            <TableCell align="left"><Button variant ="contained" onClick ={goToOther} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
+        <Table size="small">
+          <TableHead>
+            <TableRow>
+              <TableCell align="left">Category</TableCell>
+              <TableCell align="left">Count</TableCell>
+              <TableCell align="left">Details</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            <TableRow>
+              <TableCell align="left">Media</TableCell>
+              {/* <TableCell align="left">{mediaCount[0].count}</TableCell> */}
+              <TableCell align="left"><Button style={{backgroundColor: '#81b29a'}} variant="contained" onClick={goToMedia} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell align="left">Products</TableCell>
+              {/* <TableCell align="left">{productCount[0].count}</TableCell> */}
+              <TableCell align="left"><Button style={{backgroundColor: '#81b29a'}} variant="contained" onClick={goToProducts} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell align="left">Businesses</TableCell>
+              {/* <TableCell>{businessCount[0].count}</TableCell> */}
+              <TableCell><Button style={{backgroundColor: '#81b29a'}} variant="contained" onClick={goToBusiness} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell align="left">Other</TableCell>
+              {/* <TableCell>{otherCount[0].count}</TableCell> */}
+              <TableCell align="left"><Button style={{backgroundColor: '#81b29a'}} variant="contained" onClick={goToOther} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
       </TableContainer>
 
-     
-
-      </div>
+      <Button variant="contained" style={{backgroundColor: '#e07a5f'}} size="large" onClick={goToAddPage}>ADD RECOMMENDATION </Button>
 
 
-       
+
+    </div>
+
+
+
 
 
 

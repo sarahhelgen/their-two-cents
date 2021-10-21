@@ -28,10 +28,14 @@ function AddPage() {
     const [notesError, setNotesError] = useState(false);
 
     const useStyles = makeStyles({
-        field: {
-            marginTop: 20,
-            marginBottom: 20,
-        }
+        radio: {
+            '&$checked': {
+                color: '##e07a5f'
+            }
+        },
+        checked: {}
+
+
     })
 
     const classes = useStyles();
@@ -70,7 +74,7 @@ function AddPage() {
     return (
 
         <div>
-            <Typography variant="h5" align="center">
+            <Typography variant="h5" align="left">
                 Add Your Recommendation!
             </Typography>
 
@@ -79,16 +83,16 @@ function AddPage() {
                     <TextField className={classes.field} fullWidth error={nameError} id="outlined-basic" label="Name" variant="outlined" type="text" required value={name} onChange={(event) => setName(event.target.value)} />
                     <TextField className={classes.field} fullWidth error={typeError} id="outlined-basic" label="Type" variant="outlined" type="text" required value={type} onChange={(event) => setType(event.target.value)} />
                     <TextField className={classes.field} fullWidth error={notesError} multiline rows={4} id="outlined-basic" label="Notes" variant="outlined" type="text" required value={notes} onChange={(event) => setNotes(event.target.value)} />
-                    <FormControl className={classes.field}>
+                    <FormControl>
                         <FormLabel>Choose a category: </FormLabel>
-                        <RadioGroup value={category} onChange={(event) => setCategory(event.target.value)}>
+                        <RadioGroup value={category} onChange={(event) => setCategory(event.target.value)}  classes={{root: classes.radio, checked: classes.checked}}>
                             <FormControlLabel value={1} control={<Radio />} label="Media" />
                             <FormControlLabel value={2} control={<Radio />} label="Business" />
                             <FormControlLabel value={3} control={<Radio />} label="Product" />
                             <FormControlLabel value={4} control={<Radio />} label="Other" />
                         </RadioGroup>
                     </FormControl>
-                    <Button variant="contained" type="submit" endIcon={<KeyboardArrowRightIcon />}>Submit</Button>
+                    <Button style={{ backgroundColor: '#81b29a' }} variant="contained" type="submit" endIcon={<KeyboardArrowRightIcon />}>Submit</Button>
                 </form>
             </Container>
 
