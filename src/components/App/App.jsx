@@ -23,6 +23,7 @@ import MediaPage from '../MediaPage/MediaPage';
 import BusinessPage from '../BusinessPage/BusinessPage';
 import ProductPage from '../ProductPage/ProductPage';
 import OtherPage from '../OtherPage/OtherPage';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 
 
@@ -34,6 +35,13 @@ function App() {
   const dispatch = useDispatch();
 
   const user = useSelector(store => store.user);
+
+  const theme = createTheme({
+    typography: {
+      fontFamily: [
+        'Quicksand',
+      ].join(','),
+    },});
 
   useEffect(() => {
     dispatch({ type: 'FETCH_USER' });
@@ -56,23 +64,30 @@ function App() {
             exact
             path="/user"
           >
+            <ThemeProvider theme={theme}>
             <UserPage />
+            </ThemeProvider>
           </ProtectedRoute>
+    
           <ProtectedRoute
             //this is the route for the add a recommendation page
             exact
             path="/add"
           >
+            <ThemeProvider theme={theme}>
             <AddPage />
+            </ThemeProvider>
           </ProtectedRoute>
 
+            
           <ProtectedRoute
             //this is the route for the favorite page
             exact
             path="/favorite"
           >
-
+        <ThemeProvider theme={theme}> 
             <FavoritePage />
+            </ThemeProvider>
           </ProtectedRoute>
 
           <ProtectedRoute
@@ -80,7 +95,9 @@ function App() {
             exact
             path="/media"
           >
+            <ThemeProvider theme={theme}>
             <MediaPage />
+            </ThemeProvider>
           </ProtectedRoute>
 
           <ProtectedRoute
@@ -88,7 +105,9 @@ function App() {
             exact
             path="/business"
           >
+            <ThemeProvider theme={theme}>
             <BusinessPage />
+            </ThemeProvider>
           </ProtectedRoute>
 
           <ProtectedRoute
@@ -96,7 +115,9 @@ function App() {
             exact
             path="/product"
           >
+            <ThemeProvider theme={theme}>
             <ProductPage />
+            </ThemeProvider>
           </ProtectedRoute>
 
           <ProtectedRoute
@@ -104,7 +125,9 @@ function App() {
             exact
             path="/other"
           >
+            <ThemeProvider theme={theme}>
             <OtherPage />
+            </ThemeProvider>
           </ProtectedRoute>
 
           <Route
