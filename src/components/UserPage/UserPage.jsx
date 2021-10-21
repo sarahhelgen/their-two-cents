@@ -72,11 +72,11 @@ function UserPage() {
 
   return (
     <div>
-
+{/* 
       {JSON.stringify(mediaCount)}
       {JSON.stringify(productCount)}
       {JSON.stringify(businessCount)}
-      {JSON.stringify(otherCount)} 
+      {JSON.stringify(otherCount)}  */}
 
       <Box p={1}>
       <Typography variant="h4" align="left">
@@ -102,22 +102,22 @@ function UserPage() {
           <TableBody>
             <TableRow>
               <TableCell align="left">Media</TableCell>
-              {/* <TableCell align="left">{mediaCount[0].count}</TableCell> */}
+              <TableCell align="left">{mediaCount.length > 0 && mediaCount[0].count}</TableCell>
               <TableCell align="left"><Button style={{backgroundColor: '#81b29a'}} variant="contained" onClick={goToMedia} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
             </TableRow>
             <TableRow>
               <TableCell align="left">Products</TableCell>
-              {/* <TableCell align="left">{productCount[0].count}</TableCell> */}
+              <TableCell align="left">{productCount.length > 0 && productCount[0].count}</TableCell>
               <TableCell align="left"><Button style={{backgroundColor: '#81b29a'}} variant="contained" onClick={goToProducts} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
             </TableRow>
             <TableRow>
               <TableCell align="left">Businesses</TableCell>
-              {/* <TableCell>{businessCount[0].count}</TableCell> */}
+              <TableCell>{businessCount.length > 0 && businessCount[0].count}</TableCell>
               <TableCell><Button style={{backgroundColor: '#81b29a'}} variant="contained" onClick={goToBusiness} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
             </TableRow>
             <TableRow>
               <TableCell align="left">Other</TableCell>
-              {/* <TableCell>{otherCount[0].count}</TableCell> */}
+              <TableCell>{otherCount.length > 0 && otherCount[0].count}</TableCell>
               <TableCell align="left"><Button style={{backgroundColor: '#81b29a'}} variant="contained" onClick={goToOther} endIcon={<NavigateNextIcon />}>Details</Button></TableCell>
             </TableRow>
           </TableBody>
