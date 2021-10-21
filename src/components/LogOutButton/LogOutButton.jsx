@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import LogoutIcon from '@mui/icons-material/Logout';
+
 
 function LogOutButton(props) {
   const dispatch = useDispatch();

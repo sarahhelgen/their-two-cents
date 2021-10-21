@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import List from '@mui/material/List';
 import Drawer from '@mui/material/Drawer';
@@ -28,6 +28,7 @@ function Nav() {
 
   const user = useSelector((store) => store.user);
   const [drawerState, setDrawerState] = useState(false);
+  const dispatch = useDispatch();
 
   const toggleDrawer = (open) => (event) => {
     setDrawerState(open)
@@ -118,14 +119,17 @@ function Nav() {
               <ListItemText primary={"Favorites"} />
             </ListItem>
           </Link>
-          <Link>
-          <ListItem button>
-    
+          <Link className={classes.link}>
+          <ListItem button  onClick={() => dispatch({ type: 'LOGOUT' })}>
+          <ListItemIcon>
+          <LogoutIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Logout"} />
           </ListItem>
 
           </Link>
-          <LogoutIcon />
-          <LogOutButton className="navLink" />
+          
+          <LogOutButton />
         </List>
       </Typography>
     </div>
