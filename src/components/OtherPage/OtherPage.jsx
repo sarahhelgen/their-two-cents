@@ -27,10 +27,13 @@ function OtherPage() {
 
     const useStyles = makeStyles({
             likeButton :{
-                color: '#e07a5f'
+                color: '#e07a5f',
             },
             deleteButton: {
-                color: '#81b29a'
+                color: '#81b29a',
+            },
+            header: {
+                fontFamily: 'Reem Kufi',
             }
             
     })
@@ -51,7 +54,7 @@ function OtherPage() {
 
         <div>
             <Box p={2}>
-            <Typography variant="h5" align="left">
+            <Typography className={classes.header}variant="h5" align="left">
                 Other Recommendations
             </Typography>
             </Box>

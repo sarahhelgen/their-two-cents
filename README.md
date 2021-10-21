@@ -1,12 +1,11 @@
 
 # Their Two Cents
-This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
 
-We **STRONGLY** recommend following these instructions carefully. It's a lot, and will take some time to set up, but your life will be much easier this way in the long run.
+## Description
 
-## Use the Template for This Repository (Don't Clone)
+Duration: 2 week sprint
 
-- Don't Fork or Clone. Instead, click the `Use this Template` button, and make a copy to your personal account.
+Created a recommendation management application, Their Two Cents, using React, Redux, and Redux Sagas. A user can login and view recommendations given to them by friends and family so they don't forget! Recommendations are organized by four categories: media, business, product, and other. There are additional views to add a recommendation by category and add some notes, as well as a favorites page so the user can save their favorite recommendations all in one place. Recommendations can also be deleted.
 
 
 ## Prerequisites

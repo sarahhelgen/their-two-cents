@@ -20,6 +20,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import TerrainIcon from '@mui/icons-material/Terrain';
 import WidgetsIcon from '@mui/icons-material/Widgets';
 import LogoutIcon from '@mui/icons-material/Logout';
+import Box from '@mui/material/Box';
 
 
 
@@ -149,7 +150,9 @@ function Nav() {
           </>
         )}
         <div className={classes.root}>
+          <Box p={1}>
           <MenuIcon className="nav-title" fontSize="large" button onClick={toggleDrawer(true)} />
+          </Box>
           <Drawer
             className={classes.drawer}
             variant="temporary"
