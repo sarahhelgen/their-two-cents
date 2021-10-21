@@ -78,6 +78,7 @@ function AddPage() {
             </Typography>
             </Box>
 
+            <Box p={3}>
             <Container component={Paper}>
                 <form noValidate autoComplete="off" onSubmit={addNewRecommendation}>
                     <Box p={2}>
@@ -105,6 +106,7 @@ function AddPage() {
                     </Box>
                 </form>
             </Container>
+            </Box>
 
         </div>
     )

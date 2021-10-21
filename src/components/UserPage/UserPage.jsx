@@ -73,10 +73,10 @@ function UserPage() {
   return (
     <div>
 
-      {/* {JSON.stringify(mediaCount)}
+      {JSON.stringify(mediaCount)}
       {JSON.stringify(productCount)}
       {JSON.stringify(businessCount)}
-      {JSON.stringify(otherCount)} */}
+      {JSON.stringify(otherCount)} 
 
       <Box p={1}>
       <Typography variant="h4" align="left">

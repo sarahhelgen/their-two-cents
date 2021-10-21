@@ -5,7 +5,7 @@
 
 Duration: 2 week sprint
 
-Created a recommendation management application, Their Two Cents, using React, Redux, and Redux Sagas. A user can login and view recommendations given to them by friends and family so they don't forget! Recommendations are organized by four categories: media, business, product, and other. There are additional views to add a recommendation by category and add some notes, as well as a favorites page so the user can save their favorite recommendations all in one place. Recommendations can also be deleted.
+Created a recommendation management application, Their Two Cents, using React, Redux, and Redux Sagas. A user can login and view recommendations given to them by friends and family so they don't forget! Recommendations are organized by four categories: media, business, product, and other. There are additional views to add a recommendation by category and add some notes, as well as a favorites page so the user can save their favorite recommendations all in one place. Recommendations can also be deleted. I had alot of fun learning Material UI basics for this application as well.
 
 
 ## Prerequisites
