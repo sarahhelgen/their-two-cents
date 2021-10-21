@@ -12,6 +12,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@mui/styles';
+import Box from '@mui/material/Box';
 
 
 function ProductPage() {
@@ -45,12 +46,12 @@ function ProductPage() {
 
     return (
 
-
-
         <>
+            <Box p={2}>
             <Typography variant="h5" align="left">
                 Product Recommendations
             </Typography>
+            </Box>
 
             <TableContainer component={Paper}>
                 <Table size="small">

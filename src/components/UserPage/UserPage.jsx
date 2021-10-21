@@ -13,6 +13,7 @@ import Button from '@mui/material/Button';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@mui/styles';
+import Box from '@mui/material/Box';
 
 
 function UserPage() {
@@ -77,9 +78,11 @@ function UserPage() {
       {JSON.stringify(businessCount)}
       {JSON.stringify(otherCount)} */}
 
+      <Box p={2}>
       <Typography variant="h5" align="left">
         Welcome to Their Two Cents! Here are your current recommendations:
       </Typography>
+      </Box>
 
 
       <TableContainer component={Paper}>
@@ -116,9 +119,9 @@ function UserPage() {
         </Table>
       </TableContainer>
 
+      <Box sx={{p:2, display: 'flex', justifyContent: 'flex-end'}}>
       <Button variant="contained" style={{backgroundColor: '#e07a5f'}} size="large" onClick={goToAddPage}>ADD RECOMMENDATION </Button>
-
-
+      </Box>
 
     </div>
 

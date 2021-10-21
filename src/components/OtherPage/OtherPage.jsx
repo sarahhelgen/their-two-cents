@@ -12,6 +12,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@mui/styles';
+import Box from '@mui/material/Box';
 
 
 function OtherPage() {
@@ -49,9 +50,11 @@ function OtherPage() {
 
 
         <div>
+            <Box p={2}>
             <Typography variant="h5" align="left">
                 Other Recommendations
             </Typography>
+            </Box>
 
             <TableContainer component={Paper} variant="outlined" elevation={8}>
                 <Table className={classes.table} size={"small"}>

@@ -14,6 +14,7 @@ import FormLabel from '@mui/material/FormLabel';
 import FormControl from '@mui/material/FormControl';
 import { makeStyles } from '@mui/styles';
 import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
 function AddPage() {
 
@@ -28,12 +29,9 @@ function AddPage() {
     const [notesError, setNotesError] = useState(false);
 
     const useStyles = makeStyles({
-        radio: {
-            '&$checked': {
-                color: '##e07a5f'
-            }
-        },
-        checked: {}
+        formLabel: {
+            color: 'black',
+        }
 
 
     })
@@ -74,25 +72,37 @@ function AddPage() {
     return (
 
         <div>
+            <Box p={2}>
             <Typography variant="h5" align="left">
                 Add Your Recommendation!
             </Typography>
+            </Box>
 
             <Container component={Paper}>
                 <form noValidate autoComplete="off" onSubmit={addNewRecommendation}>
-                    <TextField className={classes.field} fullWidth error={nameError} id="outlined-basic" label="Name" variant="outlined" type="text" required value={name} onChange={(event) => setName(event.target.value)} />
-                    <TextField className={classes.field} fullWidth error={typeError} id="outlined-basic" label="Type" variant="outlined" type="text" required value={type} onChange={(event) => setType(event.target.value)} />
-                    <TextField className={classes.field} fullWidth error={notesError} multiline rows={4} id="outlined-basic" label="Notes" variant="outlined" type="text" required value={notes} onChange={(event) => setNotes(event.target.value)} />
+                    <Box p={2}>
+                    <TextField fullWidth error={nameError} id="outlined-basic" label="Name" variant="outlined" type="text" required value={name} onChange={(event) => setName(event.target.value)} />
+                    </Box>
+                    <Box p={2}>
+                    <TextField fullWidth error={typeError} id="outlined-basic" label="Type" variant="outlined" type="text" required value={type} onChange={(event) => setType(event.target.value)} />
+                    </Box>
+                    <Box p={2}>
+                    <TextField fullWidth error={notesError} multiline rows={4} id="outlined-basic" label="Notes" variant="outlined" type="text" required value={notes} onChange={(event) => setNotes(event.target.value)} />
+                    </Box>
+                    <Box p={2}>
                     <FormControl>
-                        <FormLabel>Choose a category: </FormLabel>
-                        <RadioGroup value={category} onChange={(event) => setCategory(event.target.value)}  classes={{root: classes.radio, checked: classes.checked}}>
+                        <FormLabel >Choose a category: </FormLabel>
+                        <RadioGroup value={category} onChange={(event) => setCategory(event.target.value)}  >
                             <FormControlLabel value={1} control={<Radio />} label="Media" />
                             <FormControlLabel value={2} control={<Radio />} label="Business" />
                             <FormControlLabel value={3} control={<Radio />} label="Product" />
                             <FormControlLabel value={4} control={<Radio />} label="Other" />
                         </RadioGroup>
                     </FormControl>
+                    </Box>
+                    <Box sx={{p:2, display: 'flex', justifyContent: 'flex-end'}}>
                     <Button style={{ backgroundColor: '#81b29a' }} variant="contained" type="submit" endIcon={<KeyboardArrowRightIcon />}>Submit</Button>
+                    </Box>
                 </form>
             </Container>
 

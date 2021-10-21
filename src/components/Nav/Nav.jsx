@@ -36,7 +36,7 @@ function Nav() {
 
   const useStyles = makeStyles({
     page: {
-      background: '#f9f9f9',
+      background: '#f4f1de',
       width: '100%'
     },
     drawer: {
@@ -123,6 +123,7 @@ function Nav() {
           </ListItem>
 
           </Link>
+          <LogoutIcon />
           <LogOutButton className="navLink" />
         </List>
       </Typography>
