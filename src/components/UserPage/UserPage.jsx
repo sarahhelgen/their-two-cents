@@ -94,9 +94,9 @@ function UserPage() {
         <Table size="small">
           <TableHead>
             <TableRow>
-              <TableCell align="left">Category</TableCell>
-              <TableCell align="left">Count</TableCell>
-              <TableCell align="left">Details</TableCell>
+              <TableCell align="left" style={{ fontWeight: 700 }}>Category</TableCell>
+              <TableCell align="left" style={{ fontWeight: 700 }}>Count</TableCell>
+              <TableCell align="left" style={{ fontWeight: 700 }}>Details</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

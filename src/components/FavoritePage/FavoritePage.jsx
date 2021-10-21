@@ -54,10 +54,10 @@ const classes = useStyles();
                     <Table size="small">
                         <TableHead>
                             <TableRow>
-                                <TableCell align="left">Name</TableCell>
-                                <TableCell align="left">Type</TableCell>
-                                <TableCell align="left">Notes</TableCell>
-                                <TableCell align="left">Delete</TableCell>
+                                <TableCell align="left" style={{ fontWeight: 700 }}>Name</TableCell>
+                                <TableCell align="left" style={{ fontWeight: 700 }}>Type</TableCell>
+                                <TableCell align="left" style={{ fontWeight: 700 }}>Notes</TableCell>
+                                <TableCell align="left" style={{ fontWeight: 700 }}>Delete</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
