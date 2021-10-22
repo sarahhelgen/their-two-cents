@@ -15,6 +15,7 @@ const businessRouter = require('./routes/business.router');
 const productRouter = require('./routes/product.router');
 const otherRouter = require('./routes/other.router')
 const favoriteRouter = require('./routes/favorite.router');
+const twilioRouter = require('./routes/twilio.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -35,6 +36,7 @@ app.use('/api/business', businessRouter );
 app.use('/api/product', productRouter );
 app.use('/api/other', otherRouter );
 app.use('/api/favorite', favoriteRouter );
+app.use('/api/twilio', twilioRouter )
 
 
 // Serve static files
