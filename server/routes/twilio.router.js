@@ -1,6 +1,7 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
+require('dotenv').config();
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
@@ -8,11 +9,12 @@ const client = require('twilio')(accountSid, authToken);
 
 client.messages
     .create({
-        body: 'This is the ship that made the Kessel Run in fourteen parsecs?',
-        from: '+15017122661',
-        to: '+15558675310'
+        body: 'Greetings! You have recommendations waiting for you in Their Two Cents :) ',
+        from: '+16124414900',
+        to: '+16125016629'
     })
-    .then(message => console.log(message.sid));
+    .then(message => console.log(message))
+    .catch(error => console.log(error));
 
 /**
  * GET route template
