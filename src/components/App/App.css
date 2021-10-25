@@ -6,7 +6,7 @@ body,
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Quicksand';
   margin: 0px;
   background-color: #f2cc8f;
 }
@@ -34,7 +34,7 @@ Button
   border-color: #014041;
   border-width: 1px 1px 3px;
   border-radius: 4px;
-  background-color: #00acb0;
+  background-color: #e07a5f;
   color: #f8f8f8;
   font-size: 1.1rem;
   outline: 0;
