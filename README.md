@@ -10,7 +10,7 @@ Created a recommendation management application, Their Two Cents, using React, R
 A deployed version of this app can be found here: (ADD ONCE DEPLOYED)
 
 ## Screen Shot
-![app image](documentation/images/Screen Shot 2021-10-25 at 4.09.30 AM.png)
+![image](documentation/images/Screen Shot 2021-10-25 at 4.09.30 AM.png)
 
 
 ## Prerequisites
