@@ -10,7 +10,19 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
  * @apiName GetMediaRecommendations
  * @apiGroup Media
  * @apiDescription This route is intended to get all Media recommendations for the media page
- * @apiSuccessExample {json}
+ * @apiSuccessExample {json} Success-Response 
+ *   [{
+      id: 76,
+      name: 'Getting On',
+      type: 'Television',
+      notes: 'On HBO - about a geriatric wing in a hospital. Lots of strong female characters.',
+      favorite: false,
+      user_id: null,
+      category_id: 1,
+      rec_id: 76
+    }]
+ * @apiExample Example Usage:
+ * http://localhost5000/api/media
  */
 
 router.get('/', rejectUnauthenticated, (req, res) => {
@@ -26,27 +38,46 @@ router.get('/', rejectUnauthenticated, (req, res) => {
         })
 });
 
+/**
+ * @api {delete} /media/:id Media List
+ * @apiPermission user
+ * @apiName DeleteMediaRecommendation
+ * @apiGroup Media
+ * @apiDescription This route is intended to delete a single item from the media page.
+ *  @apiExample Example Usage:
+ * http://localhost5000/api/media
+ */
 
-router.delete('/:id', rejectUnauthenticated, (req,res) => {
-    console.log('req.params is', req.params );
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
+    console.log('req.params is', req.params);
     const mediaId = req.params.id;
     const queryText = `DELETE FROM "recommendation" WHERE id = $1`;
-    pool.query(queryText, [mediaId] ).then((result) =>{
+    pool.query(queryText, [mediaId]).then((result) => {
         res.sendStatus(200);
-    }).catch((error) =>{
-        console.log( 'error with /media DELETE', error );
+    }).catch((error) => {
+        console.log('error with /media DELETE', error);
         res.sendStatus(500);
     })
 })
 
-router.put('/:id',rejectUnauthenticated, (req,res) => {
-    console.log('req.params is', req.params );
+/**
+ * @api {put} /media/:id Media List
+ * @apiPermission user
+ * @apiName UpdateMediaRecommendation
+ * @apiGroup Media
+ * @apiDescription This route is intended to favorite a single item from the media page.
+ *  @apiExample Example Usage:
+ * http://localhost5000/api/media
+ */
+
+router.put('/:id', rejectUnauthenticated, (req, res) => {
+    console.log('req.params is', req.params);
     const mediaId = req.params.id;
     let queryText = `UPDATE "recommendation" SET "favorite" = 'true' WHERE id = $1;`;
     pool.query(queryText, [mediaId]).then((result) => {
         res.sendStatus(200);
     }).catch((error) => {
-        console.log( 'error with media PUT', error );
+        console.log('error with media PUT', error);
         res.sendStatus(500);
     })
 })
