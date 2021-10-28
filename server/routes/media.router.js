@@ -4,6 +4,15 @@ const router = express.Router();
 const { rejectUnauthenticated } = require('../modules/authentication-middleware')
 
 
+/**
+ * @api {get} /media Media List
+ * @apiPermission user
+ * @apiName GetMediaRecommendations
+ * @apiGroup Media
+ * @apiDescription This route is intended to get all Media recommendations for the media page
+ * @apiSuccessExample {json}
+ */
+
 router.get('/', rejectUnauthenticated, (req, res) => {
     const queryText = `SELECT "recommendation".*, "recommendation"."id" as "rec_id" FROM "recommendation"
     JOIN "category" ON "category"."id" = "recommendation"."category_id"

@@ -9,8 +9,7 @@ Created a recommendation management application, Their Two Cents, using React, R
 
 A deployed version of this app can be found here: https://murmuring-beyond-38322.herokuapp.com/#/user
 
-## Screen Shot
-
+## Screen Shot 
 
 ![app image](./documentation/images/screenshot.png)
 
