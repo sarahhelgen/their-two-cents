@@ -36,7 +36,7 @@ app.use('/api/business', businessRouter );
 app.use('/api/product', productRouter );
 app.use('/api/other', otherRouter );
 app.use('/api/favorite', favoriteRouter );
-app.use('/api/twilio', twilioRouter )
+// app.use('/api/twilio', twilioRouter )
 
 
 // Serve static files
