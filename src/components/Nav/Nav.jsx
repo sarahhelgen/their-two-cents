@@ -24,7 +24,7 @@ import Box from '@mui/material/Box';
 
 
 
-function Nav() {
+function Nav(props) {
 
   const user = useSelector((store) => store.user);
   const [drawerState, setDrawerState] = useState(false);
@@ -120,7 +120,7 @@ function Nav() {
             </ListItem>
           </Link>
           <Link className={classes.link}>
-          <ListItem button  onClick={() => dispatch({ type: 'LOGOUT' })}>
+          <ListItem button className={props.className} onClick={() => dispatch({ type: 'LOGOUT' })}>
           <ListItemIcon>
           <LogoutIcon />
           </ListItemIcon>
