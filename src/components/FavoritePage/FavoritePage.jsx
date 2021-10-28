@@ -29,11 +29,12 @@ function FavoritePage() {
 })
 
 const classes = useStyles();
-
+//on page load, dispatch goes out to fetch all favorites for the favorites page
     useEffect(() => {
         dispatch({ type: 'FETCH_FAVORITES' });
     }, []);
 
+    //on click of delete button, item will be deleted from favorites page
     const deleteFavorite = (favoriteId) => {
         console.log('in deleteFavorite');
         dispatch({ type: 'DELETE_FAVORITE', payload: favoriteId })
