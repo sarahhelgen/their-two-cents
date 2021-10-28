@@ -32,7 +32,7 @@ You will need this software installed to run this project:
 
 ## Built With:
 
-- React, Redux, Redux Sagas, PostgreSQL, Passport, Material UI.
+- React, Redux, Redux Sagas, Node, Express, PostgreSQL, Passport, Material UI.
 
 ## Acknowledgement
 Thanks to my instructors Chris, Liz, Dane, and Kris and everyone at Prime Digital Academy for helping me learn the technical skills to build this!
